@@ -2,6 +2,13 @@
 
 namespace Rafflex\AdminSetupXtension;
 
+use Rafflex\AdminSetupXtension\Admin\DashboardWidgets;
+use Rafflex\AdminSetupXtension\Admin\Footer;
+use Rafflex\AdminSetupXtension\Admin\Menu;
+use Rafflex\AdminSetupXtension\Admin\Notification;
+use Rafflex\AdminSetupXtension\Front\Emoji;
+use Rafflex\AdminSetupXtension\Front\Head;
+
 class App
 {
     private static $instance;
@@ -9,7 +16,7 @@ class App
     /**
      * Singleton constructor.
      *
-     * @return \Rafflex\AdminSetupXtension\App
+     * @return App
      */
     public static function getInstance()
     {
@@ -21,42 +28,69 @@ class App
     }
 
     /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-//        $this->acl = defined('S3_UPLOADS_OBJECT_ACL') ? S3_UPLOADS_OBJECT_ACL : 'public-read';
-//        $this->local = defined('S3_UPLOADS_USE_LOCAL') ? S3_UPLOADS_USE_LOCAL : false;
-//        $this->region = defined('S3_UPLOADS_REGION') ? S3_UPLOADS_REGION : null;
-//        $this->bucket = defined('S3_UPLOADS_BUCKET') ? S3_UPLOADS_BUCKET : null;
-//        $this->key = defined('S3_UPLOADS_KEY') ? S3_UPLOADS_KEY : null;
-//        $this->secret = defined('S3_UPLOADS_SECRET') ? S3_UPLOADS_SECRET : null;
-//        $this->endpoint = defined('S3_UPLOADS_ENDPOINT') ? S3_UPLOADS_ENDPOINT : null;
-//        $this->signature = defined('S3_UPLOADS_SIGNATURE') ? S3_UPLOADS_SIGNATURE : 'v4';
-//        $this->bucketPath = "s3://{$this->bucket}/app";
-//        $this->bucketUrl = "https://{$this->bucket}.{$this->region}.cdn.digitaloceanspaces.com";
-//        $this->editor = '\\TinyPixel\\Uploads\\ImageEditorImagick';
-    }
-
-    /**
-     * Setup the hooks, urls filtering etc for S3 Uploads
+     * Setup the hooks, urls filtering etc
      *
      * @return void
      */
-    public function setup(): void
+    public function setup() : void
     {
-//        $this->filterParameters();
+        // Admin
+        $this->defineMenuHooks();
+        $this->defineNotificationHooks();
+        $this->defineDashboardWidgets();
 
-//        add_filter('upload_dir', [$this, 'filterUploadDir']);
+        // Front
+        $this->defineFrontHead();
+        $this->defineFrontEmoji();
     }
 
-    /**
-     * Filter parameters
-     *
-     * @return void
-     */
-    public function filterParameters(): void
+    public function defineMenuHooks()
     {
-//        $this->acl = apply_filters('s3_media_acl', $this->acl);
+        $menu = new Menu();
+
+        // Remove default pages
+        add_action('admin_menu', [$menu, 'removePages']);
+
+        // Remove default sub pages
+        add_action('admin_menu', [$menu, 'removeSubPages']);
+
+        // Add new pages
+        add_action('admin_menu', [$menu, 'addPages']);
+
+        // Add Reusable Blocks menu subpage
+        add_action('admin_menu', [$menu, 'addReusableBlocks']);
+    }
+
+    public function defineNotificationHooks()
+    {
+        $notification = new Notification();
+
+        // Remove various notifications
+        add_action('admin_head', [$notification, 'removeNotifications']);
+    }
+
+    public function defineDashboardWidgets()
+    {
+        $dashboard_widgets = new DashboardWidgets();
+
+        // Remove default dashboard widgets
+        add_action('wp_dashboard_setup', [$dashboard_widgets, 'removeWidgets']);
+
+        // Remove Welcome dashboard widget
+        remove_action('welcome_panel', 'wp_welcome_panel');
+    }
+
+    public function defineFrontHead()
+    {
+        $font_head = new Head();
+
+        add_action('init', [$font_head, 'clean']);
+    }
+
+    public function defineFrontEmoji()
+    {
+        $front_emoji = new Emoji();
+
+        add_action('init', [$front_emoji, 'clean']);
     }
 }
