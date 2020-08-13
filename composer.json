@@ -1,12 +1,12 @@
 {
-	"name": "rafflex/admin-setup-xtension",
+	"name": "rafflex/xtension",
 	"type": "wordpress-plugin",
 	"require": {
 		"composer/installers": "~1.0"
    },
    "autoload": {
      "psr-4": {
-       "Rafflex\\AdminSetupXtension\\": "src/"
+       "Rafflex\\Xtension\\": "src/"
      }
    }
 }

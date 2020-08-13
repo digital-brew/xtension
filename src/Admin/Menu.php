@@ -1,6 +1,6 @@
 <?php
 
-namespace Rafflex\AdminSetupXtension\Admin;
+namespace Rafflex\Xtension\Admin;
 
 class Menu
 {

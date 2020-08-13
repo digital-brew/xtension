@@ -9,7 +9,7 @@ class ComposerStaticInitb0d8bb1b4189dabd89c3f470414f29e7
     public static $prefixLengthsPsr4 = array (
         'R' => 
         array (
-            'Rafflex\\AdminSetupXtension\\' => 27,
+            'Rafflex\\Xtension\\' => 17,
         ),
         'C' => 
         array (
@@ -18,7 +18,7 @@ class ComposerStaticInitb0d8bb1b4189dabd89c3f470414f29e7
     );
 
     public static $prefixDirsPsr4 = array (
-        'Rafflex\\AdminSetupXtension\\' => 
+        'Rafflex\\Xtension\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

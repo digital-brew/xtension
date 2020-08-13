@@ -1,6 +1,6 @@
 <?php
 
-namespace Rafflex\AdminSetupXtension\Front;
+namespace Rafflex\Xtension\Front;
 
 class Emoji
 {

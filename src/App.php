@@ -1,13 +1,12 @@
 <?php
 
-namespace Rafflex\AdminSetupXtension;
+namespace Rafflex\Xtension;
 
-use Rafflex\AdminSetupXtension\Admin\DashboardWidgets;
-use Rafflex\AdminSetupXtension\Admin\Footer;
-use Rafflex\AdminSetupXtension\Admin\Menu;
-use Rafflex\AdminSetupXtension\Admin\Notification;
-use Rafflex\AdminSetupXtension\Front\Emoji;
-use Rafflex\AdminSetupXtension\Front\Head;
+use Rafflex\Xtension\Admin\DashboardWidgets;
+use Rafflex\Xtension\Admin\Menu;
+use Rafflex\Xtension\Admin\Notification;
+use Rafflex\Xtension\Front\Emoji;
+use Rafflex\Xtension\Front\Head;
 
 class App
 {
