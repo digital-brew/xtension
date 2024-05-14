@@ -1,16 +1,24 @@
 <?php
 
-/*
-Plugin Name: Xtension
-Description: Custom setup for admin panel and site in general.
-Author: Rafal Pajak
-Version: 1.0.0
-Author URI: https://www.burstofcode.com
-*/
+  /**
+   * Plugin Name: Xtension
+   * Plugin URI: https://digitalbrew.io
+   * Plugin Prefix: xtension
+   * Plugin ID: xtension
+   * Description: Simply extend WP Admin and WooCommerce.
+   * Version: 2.0.0
+   * Author: DigitalBrew
+   * Author URI: https://digitalbrew.io
+   * Text Domain: xtension
+   * Domain Path: languages
+   * Domain Var: PLUGIN_TD
+   * License: GPL-2.0-or-later
+   * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+   */
 
 
 require __DIR__ . '/vendor/autoload.php';
 
 add_action('plugins_loaded', function () {
-    (\Rafflex\Xtension\App::getInstance())->setup();
+    (\DigitalBrew\Xtension\Xtension::getInstance())->setup();
 });

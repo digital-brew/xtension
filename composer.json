@@ -1,12 +1,39 @@
 {
-	"name": "rafflex/xtension",
-	"type": "wordpress-plugin",
-	"require": {
-		"composer/installers": "~1.0"
-   },
-   "autoload": {
-     "psr-4": {
-       "Rafflex\\Xtension\\": "src/"
-     }
-   }
+  "name": "digital-brew/xtension",
+  "description": "Simply extend WP Admin and WooCommerce.",
+  "keywords": ["themosis", "plugin"],
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "Rafal Pajak",
+      "email": "rafal@digitalbrew.io",
+      "homepage": "https://digitalbrew.io"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DigitalBrew\\Xtension\\": "src/"
+    }
+  },
+  "type": "wordpress-plugin",
+  "repositories":[
+    {
+      "type":"composer",
+      "url":"https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:digital-brew/hooks"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "composer/installers" : "^2.2",
+    "digital-brew/hooks": "dev-main"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
 }

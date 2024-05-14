@@ -1,0 +1,40 @@
+:root {
+  --color-primary: #333;
+  --color-primary-darker: #111;
+  --color-accent: #0fc0c0;
+  --color-accent-light: #DCFCFC;
+  --color-accent-dark: #053E3E;
+  --outline-color: var(--color-accent);
+  --wrapper-spacing: 12px;
+  --adminbar-height: 42px;
+  --menu-width: 240px;
+  --font-size: 13px;
+  --menu-label-font-size: 12px;
+  --bg-color: #fff;
+  --wrapper-bg-color: #1d1e1e;
+  --menu-font-size: 13px;
+  --menu-item-color: #d0d0d0;
+  --menu-label-color: #939393;
+  --table-bg-hover: rgba(242, 242, 244, 0.4);
+  --table-bg-hover: rgba(242, 242, 244, 0.4);
+  --color-gray-1: #f1f1f3;
+  --color-gray-2: #e2e2e3;
+  --color-gray-6: rgba(8, 8, 16, 0.75);
+  --border-radius: 8px;
+  --border-color: rgba(181, 181, 181, 35%);
+  --menu-item-current-text-color: #fff;
+  --menu-item-current-bg-color: rgb(70, 69, 69, 0.6);
+  --menu-item-hover-text-color: var(--menu-item-current-text-color);
+  --menu-item-hover-bg-color: rgba(47, 47, 47, 1);
+  --menu-item-icon-current: url("data:image/svg+xml,%3Csvg width='21' height='28' viewBox='0 0 21 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 14.25H19.75V15.75H19V14.25ZM10.077 13.362L10.7452 13.0215V13.0215L10.077 13.362ZM11.388 14.673L11.7285 14.0048H11.7285L11.388 14.673ZM10.5 0V10.2H9V0H10.5ZM14.55 14.25H19V15.75H14.55V14.25ZM10.5 10.2C10.5 11.0525 10.5006 11.6467 10.5384 12.1093C10.5755 12.5632 10.6446 12.824 10.7452 13.0215L9.40873 13.7025C9.18239 13.2582 9.08803 12.7781 9.04336 12.2315C8.99942 11.6936 9 11.0277 9 10.2H10.5ZM14.55 15.75C13.7223 15.75 13.0564 15.7506 12.5185 15.7066C11.9719 15.662 11.4918 15.5676 11.0475 15.3413L11.7285 14.0048C11.926 14.1054 12.1868 14.1745 12.6407 14.2116C13.1033 14.2494 13.6975 14.25 14.55 14.25V15.75ZM10.7452 13.0215C10.9609 13.4448 11.3052 13.7891 11.7285 14.0048L11.0475 15.3413C10.3419 14.9817 9.76825 14.4081 9.40873 13.7025L10.7452 13.0215Z' fill='%23656565'/%3E%3Cpath d='M17 12L20 15L17 18' stroke='%23656565' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  --menu-item-icon-vertical-line: url("data:image/svg+xml,%3Csvg width='21' height='28' viewBox='0 0 21 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='9' width='1.5' height='28' fill='%23656565'/%3E%3C/svg%3E");
+  --menu-item-icon-current-hover: url("data:image/svg+xml,%3Csvg width='21' height='28' viewBox='0 0 21 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 7.75C9 7.33579 9.33579 7 9.75 7V7C10.1642 7 10.5 7.33579 10.5 7.75V9.95C10.5 10.8025 10.5006 11.3967 10.5384 11.8593C10.5755 12.3132 10.6446 12.574 10.7452 12.7715C10.961 13.1948 11.3052 13.539 11.7285 13.7548C11.926 13.8554 12.1868 13.9245 12.6407 13.9616C13.1033 13.9994 13.6975 14 14.55 14H17.9393L16.2197 12.2803C15.9268 11.9874 15.9268 11.5126 16.2197 11.2197C16.5126 10.9268 16.9874 10.9268 17.2803 11.2197L20.2803 14.2197C20.5732 14.5126 20.5732 14.9874 20.2803 15.2803L17.2803 18.2803C16.9874 18.5732 16.5126 18.5732 16.2197 18.2803C15.9268 17.9874 15.9268 17.5126 16.2197 17.2197L17.9393 15.5H14.5179C13.705 15.5 13.0494 15.5 12.5185 15.4566C11.9719 15.412 11.4918 15.3176 11.0475 15.0913C10.3419 14.7317 9.76825 14.1581 9.40873 13.4525C9.18239 13.0082 9.08803 12.5281 9.04336 11.9815C8.99999 11.4506 8.99999 10.795 9 9.98212V7.75Z' fill='%23656565'/%3E%3C/svg%3E");
+  --font-weight-bold: 550;
+  --button-bg-color: var(--color-primary);
+  --button-bg-color-hover: var(--color-primary-darker);
+  --button-border-color: var(--color-primary);
+  --button-border-color-hover: var(--color-primary-darker);
+  --button-text-color: #fff;
+
+
+}

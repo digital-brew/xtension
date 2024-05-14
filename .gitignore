@@ -1,6 +1,8 @@
-.DS_Store
-.idea/
-node_modules/
+### Composer
+/vendor/
 
-composer.lock
-package.lock
+### IDE
+/.idea
+
+### NodeJS
+node_modules/
