@@ -2,7 +2,6 @@
   "name": "digital-brew/xtension",
   "description": "Simply extend WP Admin and WooCommerce.",
   "keywords": ["themosis", "plugin"],
-  "version": "2.0.3",
   "authors": [
     {
       "name": "Rafal Pajak",

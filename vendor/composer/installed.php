@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'digital-brew/xtension',
-        'pretty_version' => '2.0.3',
-        'version' => '2.0.3.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '75c397c29bd6805cfb5cf2888aaa76c3d63ddc78',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,9 +31,9 @@
             'dev_requirement' => false,
         ),
         'digital-brew/xtension' => array(
-            'pretty_version' => '2.0.3',
-            'version' => '2.0.3.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '75c397c29bd6805cfb5cf2888aaa76c3d63ddc78',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
