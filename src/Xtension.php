@@ -12,6 +12,7 @@ use DigitalBrew\Xtension\Modules\Comments;
 use DigitalBrew\Xtension\Modules\Front\Feed;
 use DigitalBrew\Xtension\Modules\Front\JQuery;
 use DigitalBrew\Xtension\Modules\Front\Meta;
+use DigitalBrew\Xtension\Modules\General;
 use DigitalBrew\Xtension\Modules\Posts;
 use Illuminate\Container\EntryNotFoundException;
 
@@ -40,6 +41,7 @@ class Xtension
     Emoji::init();
     Feed::init();
     Footer::init();
+    General::init();
     JQuery::init();
     Menu::init();
     Meta::init();
