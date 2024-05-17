@@ -1,0 +1,50 @@
+{
+    "name": "digital-brew/hooks",
+    "description": "An object-oriented package for the WordPress Plugin API.",
+    "version": "1.0.0",
+    "keywords": [
+        "digital-brew",
+        "hooks",
+        "wordpress plugin api",
+        "wordpress",
+        "hooks oop"
+    ],
+    "homepage": "https://github.com/digital-brew/hooks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Chandler",
+            "email": "ryan@digitalbit.uk",
+            "homepage": "https://digitalbit.uk",
+            "role": "Developer"
+        },
+        {
+            "name": "Rafal Pajak",
+            "email": "rafal@digitalbre.io",
+            "homepage": "https://digitalbre.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^9.0",
+        "symfony/var-dumper": "^5.1",
+        "vimeo/psalm": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "DigitalBrew\\Hooks\\": "src"
+        },
+        "files": [
+            "src/Support/functions.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
