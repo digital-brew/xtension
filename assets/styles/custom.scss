@@ -230,11 +230,12 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 16px;
+  height: 20px;
   cursor: pointer;
   //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   background: var(--color-gray-1);
-  border-radius: var(--border-radius);
+  border-radius: 20px;
+  padding-right: 6px;
   //border: 0.2px solid #010101;
 }
 input[type=range]::-webkit-slider-thumb {
@@ -243,10 +244,10 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 14px;
-  background: var(--color-gray-6);
+  background: var(--bg-color);
   cursor: pointer;
   -webkit-appearance: none;
-  margin: 1px;
+  margin: 3px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: var(--color-gray-1);
@@ -311,6 +312,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   border: 1px solid var(--color-gray-1) !important;
   background: var(--color-gray-1);
 }
+
+//.acf-field-true-false .acf-switch.-on {
+//  border: 1px solid var(--color-gray-2) !important;
+//  background: var(--color-gray-2);
+//}
 
 .acf-field-true-false .acf-switch-slider {
   border-radius: 50px;
@@ -405,6 +411,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .mce-panel.mce-menu {
   border: 1px solid var(--border-color) !important;
   border-radius: var(--border-radius) !important;
+  padding: 6px !important;
   box-shadow: none !important;
 }
 
@@ -497,4 +504,17 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .acf-field-relationship .acf-relationship .filters .filter:not(:first-child) {
   padding-left: 2px !important;
+}
+
+.mce-menu .mce-menu-item.mce-active.mce-menu-item-normal,
+.mce-menu .mce-menu-item:hover {
+  background: var(--color-accent) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.mce-menu .mce-menu-item:hover,
+.mce-menu .mce-menu-item:focus,
+.mce-toolbar .mce-btn-group .mce-btn.mce-listbox:hover,
+.mce-toolbar .mce-btn-group .mce-btn.mce-listbox:focus {
+  box-shadow: 0 0 0 2px var(--color-accent-light) !important;
 }
