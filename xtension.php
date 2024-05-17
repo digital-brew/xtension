@@ -6,7 +6,7 @@
    * Plugin Prefix: xtension
    * Plugin ID: xtension
    * Description: Simply extend WP Admin and WooCommerce.
-   * Version: 2.0.1
+   * Version: 2.0.2
    * Author: DigitalBrew
    * Author URI: https://digitalbrew.io
    * Text Domain: xtension
