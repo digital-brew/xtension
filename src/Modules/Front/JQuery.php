@@ -60,40 +60,8 @@
     {
       if ((getConfig('xtension.frontend.jquery.main.enabled') && getConfig('xtension.frontend.jquery.main.use_cdn')) ||
           (getConfig('xtension.frontend.jquery.migrate.enabled') && getConfig('xtension.frontend.jquery.migrate.use_cdn'))) {
-        Action::add( [ 'wp_enqueue_scripts', 'login_enqueue_scripts' ], function () {
-          global $wp_version;
-
-          if ( ! is_admin() ) {
-            wp_enqueue_script( 'jquery' );
-
-            // Get current version of jQuery from WordPress core
-            $wp_jquery_ver         = $GLOBALS['wp_scripts']->registered['jquery-core']->ver;
-            $wp_jquery_migrate_ver = $GLOBALS['wp_scripts']->registered['jquery-migrate']->ver;
-
-            if (getConfig('xtension.frontend.jquery.main.custom_version') !== null) {
-              $wp_jquery_ver = getConfig('xtension.frontend.jquery.main.custom_version');
-            }
-
-            if (getConfig('xtension.frontend.jquery.migrate.custom_version') !== null) {
-              $wp_jquery_migrate_ver = getConfig('xtension.frontend.jquery.migrate.custom_version');
-            }
-
-            $jquery_cdn_url = '//ajax.googleapis.com/ajax/libs/jquery/' . $wp_jquery_ver . '/jquery.min.js';
-
-            $jquery_migrate_cdn_url = '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/' . $wp_jquery_migrate_ver . '/jquery-migrate.min.js';
-
-            // Register jQuery with CDN URL
-            if (getConfig('xtension.frontend.jquery.main.enabled') && getConfig('xtension.frontend.jquery.main.use_cdn')) {
-              wp_deregister_script( 'jquery-core' );
-              wp_register_script( 'jquery-core', $jquery_cdn_url, '', null, true );
-            }
-            // Register jQuery Migrate with CDN URL
-            if (getConfig('xtension.frontend.jquery.migrate.enabled') && getConfig('xtension.frontend.jquery.migrate.use_cdn')) {
-              wp_deregister_script( 'jquery-migrate' );
-              wp_register_script( 'jquery-migrate', $jquery_migrate_cdn_url, [ 'jquery-core' ], null, true );
-            }
-          }
-        } );
+        Action::add( 'wp_enqueue_scripts', [ $this, 'enqueueScripts' ]  );
+        Action::add( 'login_enqueue_scripts', [ $this, 'enqueueScripts' ]  );
 
         if (getConfig('xtension.frontend.jquery.main.enabled') && getConfig('xtension.frontend.jquery.main.use_cdn')) {
           Filter::add( 'script_loader_src', function ( $src, $handle = null ) {
@@ -118,6 +86,45 @@
             return $src;
 
           }, 10, 2 );
+        }
+      }
+    }
+
+    /**
+     * @throws BindingResolutionException
+     */
+    public function enqueueScripts(): void
+    {
+      global $wp_version;
+
+      if ( ! is_admin() ) {
+        wp_enqueue_script( 'jquery' );
+
+        // Get current version of jQuery from WordPress core
+        $wp_jquery_ver         = $GLOBALS['wp_scripts']->registered['jquery-core']->ver;
+        $wp_jquery_migrate_ver = $GLOBALS['wp_scripts']->registered['jquery-migrate']->ver;
+
+        if (getConfig('xtension.frontend.jquery.main.custom_version') !== null) {
+          $wp_jquery_ver = getConfig('xtension.frontend.jquery.main.custom_version');
+        }
+
+        if (getConfig('xtension.frontend.jquery.migrate.custom_version') !== null) {
+          $wp_jquery_migrate_ver = getConfig('xtension.frontend.jquery.migrate.custom_version');
+        }
+
+        $jquery_cdn_url = '//ajax.googleapis.com/ajax/libs/jquery/' . $wp_jquery_ver . '/jquery.min.js';
+
+        $jquery_migrate_cdn_url = '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/' . $wp_jquery_migrate_ver . '/jquery-migrate.min.js';
+
+        // Register jQuery with CDN URL
+        if (getConfig('xtension.frontend.jquery.main.enabled') && getConfig('xtension.frontend.jquery.main.use_cdn')) {
+          wp_deregister_script( 'jquery-core' );
+          wp_register_script( 'jquery-core', $jquery_cdn_url, '', null, true );
+        }
+        // Register jQuery Migrate with CDN URL
+        if (getConfig('xtension.frontend.jquery.migrate.enabled') && getConfig('xtension.frontend.jquery.migrate.use_cdn')) {
+          wp_deregister_script( 'jquery-migrate' );
+          wp_register_script( 'jquery-migrate', $jquery_migrate_cdn_url, [ 'jquery-core' ], null, true );
         }
       }
     }
