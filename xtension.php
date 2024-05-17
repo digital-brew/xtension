@@ -21,4 +21,4 @@ require __DIR__ . '/vendor/autoload.php';
 
 add_action('plugins_loaded', function () {
     (\DigitalBrew\Xtension\Xtension::getInstance())->setup();
-});
+}, 999);

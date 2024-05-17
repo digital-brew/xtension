@@ -1028,10 +1028,10 @@ a#remove-post-thumbnail:hover,
 ------------------------------------------------------------------------------*/
 
 #major-publishing-actions {
-  padding: 10px;
+  padding: 20px 10px;
   clear: both;
-  border-top: 1px solid #dcdcde;
-  background: #f6f7f7;
+  //border-top: 1px solid #dcdcde;
+  background: var(--bg-color);
 }
 
 #delete-action {
@@ -2162,7 +2162,7 @@ html.wp-toolbar {
   //color: transparent;
 }
 
-.widefat td strong {
+.widefat td:not(.plugin-title) strong {
   color: transparent;
 }
 
@@ -3813,8 +3813,11 @@ img {
 .my-sites li {
   display: block;
   padding: 8px 3%;
-  min-height: 130px;
-  margin: 0;
+  //min-height: 130px;
+  text-align: center;
+  margin-right: 18px;
+  border: 1px solid var(--color-gray-2);
+  border-radius: var(--border-radius);
 }
 
 @media only screen and (max-width: 599px) {
@@ -3828,15 +3831,15 @@ img {
     background-color: #fff;
     position: relative;
   }
-  .my-sites.striped li:after {
-    content: "";
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #c3c4c7;
-  }
+  //.my-sites.striped li:after {
+  //  content: "";
+  //  width: 1px;
+  //  height: 100%;
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  background: #c3c4c7;
+  //}
 
 }
 @media only screen and (min-width: 600px) and (max-width: 699px) {
@@ -3923,7 +3926,7 @@ img {
   .my-sites li {
     float: left;
     width: 12.666666%;
-    padding: 8px 2%;
+    padding: 8px 16px;
     background-color: #fff;
   }
   .my-sites.striped li:nth-of-type(6n+1) {
@@ -3938,12 +3941,30 @@ img {
   .my-sites li:nth-of-type(12n+4),
   .my-sites li:nth-of-type(12n+5),
   .my-sites li:nth-of-type(12n+6) {
-    background-color: #f6f7f7;
+    //background-color: #f6f7f7;
   }
+}
+
+p.my-sites-actions {
+  color: transparent;
+  display: flex;
 }
 
 .my-sites li a {
   text-decoration: none;
+  padding: 4px 12px;
+  color: var(--color-gray-6);
+  background-color: var(--color-gray-1);
+  border-color: var(--color-gray-1);
+  width: 50% !important;
+  border-radius: var(--border-radius);
+  margin: 0 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.my-sites li a:hover {
+  background-color: var(--color-gray-2);
+  border-color: var(--color-gray-2);
 }
 
 /* =Media Queries
@@ -4367,3 +4388,10 @@ img {
   background-size: 14px !important;
 }
 
+#wpcontent .user-admin-color-wrap {
+  display: none !important;
+}
+
+#wpcontent .user-profile-picture img {
+  border-radius: 200px !important;
+}

@@ -207,3 +207,294 @@
   50%{background-position:51% 100%}
   100%{background-position:50% 0%}
 }
+
+.select2-container--default .select2-selection--single {
+  border: 1px solid var(--color-gray-1) !important;
+  box-shadow: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-gray-1);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  font-size: var(--font-size);
+  color: var(--color-gray-5);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  //margin: 18px 0;
+  //width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: var(--color-gray-1);
+  border-radius: var(--border-radius);
+  //border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  //border: 1px solid #000000;
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  background: var(--color-gray-6);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin: 1px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--color-gray-1);
+}
+//input[type=range]::-moz-range-track {
+//  width: 100%;
+//  height: 8.4px;
+//  cursor: pointer;
+//  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//  background: #3071a9;
+//  border-radius: 1.3px;
+//  border: 0.2px solid #010101;
+//}
+//input[type=range]::-moz-range-thumb {
+//  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//  border: 1px solid #000000;
+//  height: 36px;
+//  width: 16px;
+//  border-radius: 3px;
+//  background: #ffffff;
+//  cursor: pointer;
+//}
+//input[type=range]::-ms-track {
+//  width: 100%;
+//  height: 8.4px;
+//  cursor: pointer;
+//  background: transparent;
+//  border-color: transparent;
+//  border-width: 16px 0;
+//  color: transparent;
+//}
+//input[type=range]::-ms-fill-lower {
+//  background: #2a6495;
+//  border: 0.2px solid #010101;
+//  border-radius: 2.6px;
+//  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//}
+//input[type=range]::-ms-fill-upper {
+//  background: #3071a9;
+//  border: 0.2px solid #010101;
+//  border-radius: 2.6px;
+//  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//}
+//input[type=range]::-ms-thumb {
+//  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//  border: 1px solid #000000;
+//  height: 36px;
+//  width: 16px;
+//  border-radius: 3px;
+//  background: #ffffff;
+//  cursor: pointer;
+//}
+//input[type=range]:focus::-ms-fill-lower {
+//  background: #3071a9;
+//}
+//input[type=range]:focus::-ms-fill-upper {
+//  background: #367ebd;
+//}
+
+.acf-field-true-false .acf-switch {
+  border-radius: 50px;
+  border: 1px solid var(--color-gray-1) !important;
+  background: var(--color-gray-1);
+}
+
+.acf-field-true-false .acf-switch-slider {
+  border-radius: 50px;
+  border: 1px solid var(--bg-color) !important;
+  background: var(--bg-color);
+}
+
+.acf-field-true-false * {
+  outline: none !important;
+  text-shadow: none !important;
+}
+
+.acf-field-true-false .acf-switch-on,
+.acf-field-true-false .acf-switch-off {
+  color: var(--color-accent) !important;
+}
+
+.acf-field-true-false .acf-switch .acf-switch-slider {
+  right: 58% !important;
+}
+
+.acf-field-true-false .acf-switch.-on .acf-switch-slider {
+  left: 58% !important;
+  right: 2px !important;
+}
+
+.acf-field-repeater table, tr, th, td {
+  border-color: var(--border-color) !important;
+}
+
+.acf-field-repeater table.acf-table {
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--border-color) !important;
+  overflow: hidden;
+}
+
+.acf-field-wysiwyg .acf-editor-wrap .quicktags-toolbar,
+.acf-field-wysiwyg .acf-editor-wrap div.mce-toolbar-grp {
+  background: var(--color-gray-1) !important;
+  border-bottom: none !important;
+}
+
+.mce-top-part::before {
+  content: none !important;
+}
+
+.wp-editor-container textarea.wp-editor-area {
+  background: var(--bg-color);
+}
+
+.acf-field-wysiwyg .acf-editor-wrap.tmce-active .wp-switch-editor.switch-tmce {
+  color: var(--color-accent) !important;
+}
+.acf-field-wysiwyg .acf-editor-wrap.html-active .wp-switch-editor.switch-html {
+  color: var(--color-accent) !important;
+}
+
+.acf-field-wysiwyg .acf-editor-wrap .wp-editor-tabs button {
+  border-top-left-radius: var(--border-radius) !important;
+  border-top-right-radius: var(--border-radius) !important;
+  border-color: var(--border-color) !important;
+  border-bottom-color: transparent !important;
+  background: var(--color-gray-1) !important;
+}
+
+.acf-field-wysiwyg .acf-editor-wrap .wp-editor-container {
+  border-radius: var(--border-radius) !important;
+  border-top-right-radius: 0 !important;
+  border: 1px solid var(--border-color) !important;
+  overflow: hidden;
+}
+
+.acf-field-wysiwyg .mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.acf-field-wysiwyg .mce-toolbar .mce-btn-group .mce-caret {
+  border-color: transparent !important;
+}
+
+.acf-field-wysiwyg .mce-toolbar .mce-btn-group .mce-caret::before {
+  top: -9px;
+  left: -9px;
+  position: absolute;
+  content: "\f347" !important;
+  font: normal 14px / 1 dashicons;
+  width: 17px;
+  height: 17px;
+}
+
+.mce-panel.mce-menu {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: none !important;
+}
+
+.acf-field-group .acf-fields {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.acf-field-taxonomy .categorychecklist-holder {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.acf-field-color-picker button.wp-color-result {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+.acf-field-color-picker button.wp-color-result .wp-color-result-text {
+  border-left: 1px solid var(--border-color) !important;
+}
+
+.acf-field-oembed .acf-oembed {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+.acf-field-oembed .title {
+  background-color: var(--color-gray-1) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.acf-field-oembed .title input {
+  background-color: transparent !important;
+}
+
+.acf-field-gallery .acf-gallery {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+.acf-field-gallery .acf-gallery-toolbar {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.acf-field-button-group .acf-button-group {
+  //border: 1px solid var(--border-color) !important;
+  //border-radius: var(--border-radius) !important;
+  //overflow: hidden !important;
+}
+
+.acf-field-button-group .acf-button-group label {
+  border: 1px solid var(--border-color) !important;
+}
+
+.acf-field-button-group .acf-button-group label:hover {
+  background: var(--bg-color) !important;
+  cursor: pointer;
+}
+
+.acf-field-button-group .acf-button-group label.selected {
+  background: var(--color-accent) !important;
+}
+
+.acf-field-button-group .acf-button-group label:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+}
+
+.acf-field-button-group .acf-button-group label:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+}
+
+.acf-field-relationship .acf-relationship {
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+}
+
+.acf-field-relationship .acf-relationship .filters {
+  background: var(--color-gray-1) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.acf-field-relationship .acf-relationship .filters .filter:not(:last-child) {
+  border-right: 1px solid var(--border-color) !important;
+}
+
+.acf-field-relationship .acf-relationship .filters .filter:not(:first-child) {
+  padding-left: 2px !important;
+}

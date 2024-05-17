@@ -9,10 +9,12 @@ class Menu
 {
   public static function init(): void
   {
-    Action::add('admin_menu', [self::class, 'disableNodes'], 999);
-    Action::add('admin_menu', [self::class, 'enableNodes'], 999);
-    Action::add('admin_menu', [self::class, 'maybeDisableCustomizer']);
-    Action::add('admin_head', [self::class, 'maybeDisableWooCommerceSeparator'], 999);
+    $instance = new self();
+
+    Action::add('admin_menu', [ $instance, 'disableNodes'], 999);
+    Action::add('admin_menu', [ $instance, 'enableNodes'], 999);
+    Action::add('admin_menu', [ $instance, 'maybeDisableCustomizer']);
+    Action::add('admin_head', [ $instance, 'maybeDisableWooCommerceSeparator'], 999);
   }
 
   /**
@@ -20,9 +22,10 @@ class Menu
    */
   public function disableNodes(): void
   {
-    $nodes = config('xtension.admin_menu', []);
+    $nodes = config('xtension.admin.menu', []);
+
     foreach ($nodes as $node) {
-      if ( isset($value['disabled']) && $node['disabled'] === true ) {
+      if ( isset($node['enabled']) && $node['enabled'] === false ) {
         if (isset($node['menu_slug']) && isset($node['submenu_slug'])) {
           remove_submenu_page( $node['menu_slug'], $node['submenu_slug'] );
         }
@@ -35,9 +38,9 @@ class Menu
    */
   public function enableNodes(): void
   {
-    $nodes = config('xtension.admin_menu', []);
+    $nodes = config('xtension.admin.menu', []);
     foreach ($nodes as $node => $value ) {
-      if ( !isset($value['disabled'])) {
+      if (isset($value['enabled']) && $value['enabled'] === true) {
         if ( isset($value['is_label'])) {
           add_menu_page(
             $value['label'],
@@ -45,7 +48,7 @@ class Menu
             '',
             'admin_menu_label_'  . $node,
             '',
-            '&nbsp;',
+            'dashicons-minus',
             $value['position']
           );
         }
@@ -58,8 +61,8 @@ class Menu
    */
   public function maybeDisableCustomizer(): void
   {
-    $disabled = config('xtension.admin_menu.customizer.disabled', false);
-    if (!isset($disabled) && $disabled === true) {
+    $enabled = config('xtension.admin.menu.customizer.enabled', true);
+    if (isset($enabled) && $enabled === false) {
       $customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
       remove_submenu_page( 'themes.php', $customize_url );
     }
@@ -70,8 +73,8 @@ class Menu
    */
   public function maybeDisableWooCommerceSeparator(): void
   {
-    $disabled = config('xtension.admin_menu.woocommerce_separator.disabled', false);
-    if (isset($disabled) && $disabled === true) {
+    $enabled = config('xtension.admin.menu.woocommerce_separator.enabled', true);
+    if (isset($enabled) && $enabled === false) {
       echo '<style> #adminmenu .wp-not-current-submenu.wp-menu-separator.woocommerce { display: none !important; }</style>';
     }
   }
