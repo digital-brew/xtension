@@ -13,7 +13,7 @@ class Assets
 
   public function __construct()
   {
-    $plugin_data = get_plugin_data( plugins_path('xtension/xtension.php'));
+    $plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/xtension/xtension.php');
     $this->version = $plugin_data['Version'];
     $this->assets_path = plugins_url('xtension/dist/');
   }
