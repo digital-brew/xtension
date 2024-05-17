@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ee2deb011236b1d59022b50881cef834' => $vendorDir . '/digital-brew/hooks/src/Support/functions.php',
+    '29e041aa43648d6bc1fbc623495f1460' => $baseDir . '/src/helpers.php',
 );

@@ -3,18 +3,18 @@
 namespace DigitalBrew\Xtension\Modules\Admin;
 
 use DigitalBrew\Hooks\Filter;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Footer
 {
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
-    if ( config( 'xtension.admin.footer_text' ) !== null ) {
+    if ( getConfig( 'xtension.admin.footer_text' ) !== null ) {
       Filter::add('admin_footer_text', function () {
-        echo config( 'xtension.admin_footer_text' );
+        echo getConfig( 'xtension.admin_footer_text' );
       });
     }
   }

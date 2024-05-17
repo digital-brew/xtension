@@ -3,18 +3,18 @@
 namespace DigitalBrew\Xtension\Modules;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Posts
 {
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
     $instance = new self();
 
-    if (!config('xtension.posts.enabled')) {
+    if (!getConfig('xtension.posts.enabled')) {
       Action::add( 'init', [ $instance, 'deregisterPosts' ] );
     }
   }

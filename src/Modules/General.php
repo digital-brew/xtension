@@ -3,13 +3,10 @@
 namespace DigitalBrew\Xtension\Modules;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class General
 {
-  /**
-   * @throws EntryNotFoundException
-   */
   public static function init(): void
   {
     $instance = new self();
@@ -18,13 +15,13 @@ class General
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function accentColors(): void
   {
-    $accent = config('xtension.colors.accent', '#0fc0c0');
-    $accent_light = config('xtension.colors.accent_light', '#DCFCFC');
-    $accent_dark = config('xtension.colors.accent_dark', '#053E3E');
+    $accent = getConfig('xtension.colors.accent', '#0fc0c0');
+    $accent_light = getConfig('xtension.colors.accent_light', '#DCFCFC');
+    $accent_dark = getConfig('xtension.colors.accent_dark', '#053E3E');
     echo '
       <style>
         :root {

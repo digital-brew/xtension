@@ -13,7 +13,10 @@
   "autoload": {
     "psr-4": {
       "DigitalBrew\\Xtension\\": "src/"
-    }
+    },
+    "files": [
+      "src/helpers.php"
+    ]
   },
   "type": "wordpress-plugin",
   "repositories":[

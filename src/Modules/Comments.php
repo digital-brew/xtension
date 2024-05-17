@@ -4,18 +4,18 @@ namespace DigitalBrew\Xtension\Modules;
 
 use DigitalBrew\Hooks\Action;
 use DigitalBrew\Hooks\Filter;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Comments
 {
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
     $instance = new self();
 
-    if (!config('xtension.comments.enabled')) {
+    if (!getConfig('xtension.comments.enabled')) {
       $instance->disableComments();
     }
   }

@@ -3,7 +3,7 @@
 namespace DigitalBrew\Xtension\Modules\Admin;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Assets
 {
@@ -19,12 +19,12 @@ class Assets
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
     $instance = new self();
-    if (config('xtension.admin.new_look', false)) {
+    if (getConfig('xtension.admin.new_look', false)) {
       $instance->loadScripts();
       $instance->reloadStyles();
       $instance->loadFonts();

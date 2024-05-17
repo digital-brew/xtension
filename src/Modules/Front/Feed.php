@@ -4,16 +4,16 @@ namespace DigitalBrew\Xtension\Modules\Front;
 
 use DigitalBrew\Hooks\Action;
 use DigitalBrew\Hooks\Filter;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Feed
 {
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
-    if (!config( 'xtension.frontend.feed.enabled' )) {
+    if (!getConfig( 'xtension.frontend.feed.enabled' )) {
       Action::add( 'after_setup_theme', function () {
         Action::remove( 'wp_head', 'feed_links_extra', 3 );
         Action::remove( 'wp_head', 'feed_links', 2 );

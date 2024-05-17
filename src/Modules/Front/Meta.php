@@ -3,16 +3,16 @@
 namespace DigitalBrew\Xtension\Modules\Front;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Meta
 {
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public static function init(): void
   {
-    if (!config( 'xtension.frontend.meta_tags.enabled' )) {
+    if (!getConfig( 'xtension.frontend.meta_tags.enabled' )) {
       Action::remove( 'wp_head', 'wp_generator' );
       Action::remove( 'wp_head', 'rsd_link' );
       Action::remove( 'wp_head', 'wlwmanifest_link' );

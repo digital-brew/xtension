@@ -3,7 +3,7 @@
 namespace DigitalBrew\Xtension\Modules\Admin;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Menu
 {
@@ -18,11 +18,11 @@ class Menu
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function disableNodes(): void
   {
-    $nodes = config('xtension.admin.menu', []);
+    $nodes = getConfig('xtension.admin.menu', []);
 
     foreach ($nodes as $node) {
       if ( isset($node['enabled']) && $node['enabled'] === false ) {
@@ -34,11 +34,11 @@ class Menu
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function enableNodes(): void
   {
-    $nodes = config('xtension.admin.menu', []);
+    $nodes = getConfig('xtension.admin.menu', []);
     foreach ($nodes as $node => $value ) {
       if (isset($value['enabled']) && $value['enabled'] === true) {
         if ( isset($value['is_label'])) {
@@ -57,24 +57,24 @@ class Menu
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function maybeDisableCustomizer(): void
   {
-    $enabled = config('xtension.admin.menu.customizer.enabled', true);
-    if (isset($enabled) && $enabled === false) {
+    $enabled = getConfig('xtension.admin.menu.customizer.enabled', true);
+    if ( $enabled === false ) {
       $customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
       remove_submenu_page( 'themes.php', $customize_url );
     }
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function maybeDisableWooCommerceSeparator(): void
   {
-    $enabled = config('xtension.admin.menu.woocommerce_separator.enabled', true);
-    if (isset($enabled) && $enabled === false) {
+    $enabled = getConfig('xtension.admin.menu.woocommerce_separator.enabled', true);
+    if ( $enabled === false ) {
       echo '<style> #adminmenu .wp-not-current-submenu.wp-menu-separator.woocommerce { display: none !important; }</style>';
     }
   }

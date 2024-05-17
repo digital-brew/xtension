@@ -8,6 +8,7 @@ class ComposerStaticInit30933f27ceb4e1da5a505a8ffcbf0f5e
 {
     public static $files = array (
         'ee2deb011236b1d59022b50881cef834' => __DIR__ . '/..' . '/digital-brew/hooks/src/Support/functions.php',
+        '29e041aa43648d6bc1fbc623495f1460' => __DIR__ . '/../..' . '/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (

@@ -3,7 +3,7 @@
 namespace DigitalBrew\Xtension\Modules\Admin;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Bar
 {
@@ -16,11 +16,11 @@ class Bar
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function disableBarNodes( $admin_bar ): void
   {
-    $nodes = config('xtension.admin.bar.nodes', []);
+    $nodes = getConfig('xtension.admin.bar.nodes', []);
     foreach ($nodes as $node => $value) {
       if ( isset($value['enabled']) && $value['enabled'] === false ) {
         $admin_bar->remove_node($node);
@@ -29,11 +29,11 @@ class Bar
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function enableBarNodes( $admin_bar ): void
   {
-    $nodes = config('xtension.admin.bar.nodes', []);
+    $nodes = getConfig('xtension.admin.bar.nodes', []);
     foreach ($nodes as $node => $value) {
       if (isset($value['enabled']) && $value['enabled'] === true && isset($value['title'])) {
         $props = [

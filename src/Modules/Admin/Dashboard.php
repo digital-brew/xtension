@@ -3,7 +3,7 @@
 namespace DigitalBrew\Xtension\Modules\Admin;
 
 use DigitalBrew\Hooks\Action;
-use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Dashboard
 {
@@ -18,11 +18,11 @@ class Dashboard
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function disableWidgets(): void
   {
-    $nodes = config('xtension.admin.dashboard.widgets', []);
+    $nodes = getConfig('xtension.admin.dashboard.widgets', []);
     foreach ($nodes as $widget => $value) {
       if ( $value['enabled'] === false ) {
         remove_meta_box( $widget, 'dashboard', 'normal' );
@@ -31,31 +31,31 @@ class Dashboard
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function maybeDisableWelcomePanel(): void
   {
-    if (config('xtension.admin.dashboard.widgets.wp_welcome_panel.enabled', true) === false) {
+    if (getConfig('xtension.admin.dashboard.widgets.wp_welcome_panel.enabled', true) === false) {
       Action::remove( 'welcome_panel', 'wp_welcome_panel' );
     }
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function maybeDisableMultisiteRightNowWidget(): void
   {
-    if (config('xtension.admin.dashboard.widgets.network_dashboard_right_now.enabled', true) === false) {
+    if (getConfig('xtension.admin.dashboard.widgets.network_dashboard_right_now.enabled', true) === false) {
       remove_meta_box( 'network_dashboard_right_now', 'dashboard-network', 'core' );
     }
   }
 
   /**
-   * @throws EntryNotFoundException
+   * @throws BindingResolutionException
    */
   public function maybeDisableMultisiteWordPressEventsAndNewsWidget(): void
   {
-    if (config('xtension.admin.dashboard.widgets.network_dashboard_wordpress_events_and_news.enabled', true) === false) {
+    if (getConfig('xtension.admin.dashboard.widgets.network_dashboard_wordpress_events_and_news.enabled', true) === false) {
       remove_meta_box( 'dashboard_primary', 'dashboard-network', 'core' );
     }
   }
