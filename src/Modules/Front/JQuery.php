@@ -2,15 +2,13 @@
 
   namespace DigitalBrew\Xtension\Modules\Front;
 
+  use DigitalBrew\Hooks\Action;
   use DigitalBrew\Hooks\Filter;
-  use Illuminate\Container\EntryNotFoundException;
   use Illuminate\Contracts\Container\BindingResolutionException;
-  use Themosis\Support\Facades\Action;
 
   class JQuery
   {
     /**
-     * @throws EntryNotFoundException
      * @throws BindingResolutionException
      */
     public static function init(): void

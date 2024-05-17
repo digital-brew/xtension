@@ -14,7 +14,6 @@ use DigitalBrew\Xtension\Modules\Front\JQuery;
 use DigitalBrew\Xtension\Modules\Front\Meta;
 use DigitalBrew\Xtension\Modules\General;
 use DigitalBrew\Xtension\Modules\Posts;
-use Illuminate\Container\EntryNotFoundException;
 use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Xtension
@@ -31,7 +30,6 @@ class Xtension
   }
 
   /**
-   * @throws EntryNotFoundException
    * @throws BindingResolutionException
    */
   public function setup(): void
