@@ -133,10 +133,9 @@ TABLE OF CONTENTS:
 /* pressed state e.g. a selected setting */
 .wp-core-ui .button.active,
 .wp-core-ui .button.active:hover {
-  background-color: #dcdcde;
-  color: #135e96;
-  border-color: #0a4b78;
-  box-shadow: inset 0 2px 5px -3px #0a4b78;
+  background-color: var(--bg-color);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .wp-core-ui .button[disabled],
@@ -274,10 +273,9 @@ TABLE OF CONTENTS:
 
 /* pressed state e.g. a selected setting */
 .wp-core-ui .button-group > .button.active {
-  background-color: #dcdcde;
-  color: #135e96;
-  border-color: #0a4b78;
-  box-shadow: inset 0 2px 5px -3px #0a4b78;
+  background-color: var(--color-gray-1);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 /* ----------------------------------------------------------------------------

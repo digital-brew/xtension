@@ -1,22 +1,12 @@
 $(document).ready(function() {
   wrapAdminContent()
-  removeFooter()
+  maybeRemoveFooter()
+  maybeUpdateBodyClasses()
   unblockUI(true)
   maybeOpenSubMenu()
   maybeRotateChevron()
   handleOpenSubmenuEvent()
   handleSubmenuItemClickEvent()
-
-  // Show menu item line for items before the current hovered item
-  // $('#adminmenu ul.wp-submenu a').hover(function () {
-  //   $(this).parent().prevAll().addClass('show-line')
-  //   $(this).parent().nextAll().removeClass('show-line')
-  // })
-  //
-  // $('#adminmenu a.menu-top').hover(function () {
-  //   $('#adminmenu ul.wp-submenu li').removeClass('show-line')
-  // })
-
 });
 
 function wrapAdminContent() {
@@ -25,22 +15,41 @@ function wrapAdminContent() {
   $("#adminmenumain").detach().appendTo("#db-wrapper-1");
 }
 
-function removeFooter() {
-  $("#wpfooter").remove()
+function maybeRemoveFooter() {
+  if ($('body').hasClass('index-php')) {
+    $( "#wpfooter" ).detach().appendTo( "#db-wrapper-2" );
+    $( "#footer-upgrade" ).remove();
+  } else {
+    $( "#wpfooter" ).remove();
+  }
+}
+
+function maybeUpdateBodyClasses() {
+  const pathname = window.location.pathname
+  if (pathname === '/cms/wp-admin/' || pathname === '/cms/wp-admin/network/') {
+    $('body').addClass('top-level-dashboard')
+  }
 }
 
 function blockUI() {
-  $("body").addClass('transition')
-  $("body").addClass('mask-transparent')
-  $("body").removeClass('mask-hidden')
-  setTimeout(() =>{
-    $("body").removeClass('mask-transparent')
-  }, 100)
+  if ($("body").hasClass('woocommerce-admin-page')) {
+    $( "body" ).addClass( 'transition' )
+    setTimeout( () => {
+      unblockUI()
+    }, 1200 )
+  } else {
+    $( "body" ).addClass( 'transition' )
+    $( "body" ).addClass( 'mask-transparent' )
+    $( "body" ).removeClass( 'mask-hidden' )
+    setTimeout( () => {
+      $( "body" ).removeClass( 'mask-transparent' )
+    }, 100 )
+  }
 }
 
 function unblockUI() {
   $("body").addClass('mask-transparent')
-  setTimeout(() =>{
+  setTimeout(() => {
     $("body").addClass('mask-hidden')
   }, 300)
 }
@@ -55,8 +64,10 @@ function handleOpenSubmenuEvent() {
 
 function handleSubmenuItemClickEvent() {
   $('#adminmenu .wp-submenu a').click(function (e) {
-    updateCurrentMenuItemClass(this)
-    blockUI()
+    if (!e.target.href.includes('wc-admin') || !e.target.href.includes('wc-orders')) {
+      updateCurrentMenuItemClass( this )
+      blockUI()
+    }
   })
 }
 

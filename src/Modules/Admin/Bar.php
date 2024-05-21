@@ -13,6 +13,7 @@ class Bar
 
     Action::add('admin_bar_menu', [$instance, 'disableBarNodes'], 999);
     Action::add('admin_bar_menu', [$instance, 'enableBarNodes'], 100);
+    $instance->disableAdminBarOnFrontEnd();
   }
 
   /**
@@ -20,7 +21,7 @@ class Bar
    */
   public function disableBarNodes( $admin_bar ): void
   {
-    $nodes = getConfig('xtension.admin.bar.nodes', []);
+    $nodes = getConfig('xtension.admin_bar.nodes', []);
     foreach ($nodes as $node => $value) {
       if ( isset($value['enabled']) && $value['enabled'] === false ) {
         $admin_bar->remove_node($node);
@@ -33,7 +34,7 @@ class Bar
    */
   public function enableBarNodes( $admin_bar ): void
   {
-    $nodes = getConfig('xtension.admin.bar.nodes', []);
+    $nodes = getConfig('xtension.admin_bar.nodes', []);
     foreach ($nodes as $node => $value) {
       if (isset($value['enabled']) && $value['enabled'] === true && isset($value['title'])) {
         $props = [
@@ -55,6 +56,26 @@ class Bar
         }
 
         $admin_bar->add_node($props);
+      }
+    }
+  }
+
+  /**
+   * @throws BindingResolutionException
+   */
+  public function disableAdminBarOnFrontEnd(): void
+  {
+    $showAdminBar = getConfig('xtension.admin_bar.show', []);
+
+    if (isset($showAdminBar['administrator']) && $showAdminBar['administrator'] === false) {
+      if ( current_user_can( 'administrator' ) ) {
+        add_filter( 'show_admin_bar', '__return_false' );
+      }
+    }
+
+    if (isset($showAdminBar['other_roles']) && $showAdminBar['other_roles'] === false) {
+      if ( !current_user_can( 'administrator' ) ) {
+        add_filter( 'show_admin_bar', '__return_false' );
       }
     }
   }

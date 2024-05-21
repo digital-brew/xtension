@@ -42,7 +42,7 @@ class Assets
 
   public function reloadStyles(): void
   {
-    $styles = ['admin-bar', 'admin-menu', 'buttons', 'common', 'custom', 'dashboard', 'edit', 'forms', 'list-tables', 'nav-menus'];
+    $styles = ['admin-bar', 'admin-menu', 'buttons', 'common', 'custom', 'dashboard', 'edit', 'forms', 'list-tables', 'nav-menus', 'wc-styles'];
 
     $this->deregisterStyles($styles);
     $this->registerStyles($styles);
@@ -93,10 +93,16 @@ class Assets
     return $this->version;
   }
 
+  /**
+   * @throws BindingResolutionException
+   */
   public function canLoadAssets(): bool
   {
     $url = $_SERVER['REQUEST_URI'];
-
-    return !((str_contains($url, 'post-new.php') or str_contains($url, 'action=edit')) and !str_contains($url, 'post_type=acf-field-group'));
+    $is_post_enabled = true;
+    if ( getConfig( 'xtension.cpt.activate_on' ) !== null && get_post_type() !== false) {
+      $is_post_enabled = in_array(get_post_type(), getConfig('xtension.cpt.activate_on'));
+    }
+    return !((str_contains($url, 'post-new.php') or str_contains($url, 'action=edit')) and !str_contains($url, 'post_type=acf-field-group')) or $is_post_enabled;
   }
 }

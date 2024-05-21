@@ -3,7 +3,7 @@
   --color-primary-darker: #111;
   --outline-color: var(--color-accent);
   --wrapper-spacing: 12px;
-  --adminbar-height: 42px;
+  --adminbar-height: 48px;
   --menu-width: 240px;
   --font-size: 13px;
   --menu-label-font-size: 12px;
@@ -33,5 +33,31 @@
   --button-border-color-hover: var(--color-primary-darker);
   --button-text-color: #fff;
 
+  --color-info: #076c9f;
+  --color-info-dark: #045075;
+  --color-info-dark-opacity-01: rgba(4, 80, 117, 0.1);
+  --color-success: #00a32a;
+  --color-success-dark: #02641b;
+  --color-success-dark-opacity-01: rgba(0, 163, 42, 0.1);
+  --color-warning: #dba617;
+  --color-warning-dark: #7c5b03;
+  --color-warning-dark-opacity-01: rgba(219, 166, 23, 0.1);
+  --color-error: #d63638;
+  --color-error-dark: #8c0f10;
+  --color-error-dark-opacity-01: rgba(214, 54, 56, 0.1);
 
+  --button-primary-bg-color: '';
+  --button-primary-bg-color-hover: '';
+  --button-primary-border-color: '';
+  --button-primary-border-color-hover: '';
+  --button-primary-text-color: '';
+  --button-primary-text-color-hover: '';
+  --button-secondary-bg-color: '';
+  --button-secondary-bg-color-hover: '';
+  --button-secondary-border-color: '';
+  --button-secondary-border-color-hover: '';
+  --button-secondary-text-color: '';
+  --button-secondary-text-color-hover: '';
+  --link-color: '';
+  --link-color-hover: '';
 }

@@ -14,7 +14,7 @@ class Footer
   {
     if ( getConfig( 'xtension.admin.footer_text' ) !== null ) {
       Filter::add('admin_footer_text', function () {
-        echo getConfig( 'xtension.admin_footer_text' );
+        echo getConfig( 'xtension.admin.footer_text' );
       });
     }
   }

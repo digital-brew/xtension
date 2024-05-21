@@ -1,9 +1,10 @@
+@charset "UTF-8";
 :root {
   --color-primary: #333;
   --color-primary-darker: #111;
   --outline-color: var(--color-accent);
   --wrapper-spacing: 12px;
-  --adminbar-height: 42px;
+  --adminbar-height: 48px;
   --menu-width: 240px;
   --font-size: 13px;
   --menu-label-font-size: 12px;
@@ -32,6 +33,32 @@
   --button-border-color: var(--color-primary);
   --button-border-color-hover: var(--color-primary-darker);
   --button-text-color: #fff;
+  --color-info: #076c9f;
+  --color-info-dark: #045075;
+  --color-info-dark-opacity-01: rgba(4, 80, 117, 0.1);
+  --color-success: #00a32a;
+  --color-success-dark: #02641b;
+  --color-success-dark-opacity-01: rgba(0, 163, 42, 0.1);
+  --color-warning: #dba617;
+  --color-warning-dark: #7c5b03;
+  --color-warning-dark-opacity-01: rgba(219, 166, 23, 0.1);
+  --color-error: #d63638;
+  --color-error-dark: #8c0f10;
+  --color-error-dark-opacity-01: rgba(214, 54, 56, 0.1);
+  --button-primary-bg-color: "";
+  --button-primary-bg-color-hover: "";
+  --button-primary-border-color: "";
+  --button-primary-border-color-hover: "";
+  --button-primary-text-color: "";
+  --button-primary-text-color-hover: "";
+  --button-secondary-bg-color: "";
+  --button-secondary-bg-color-hover: "";
+  --button-secondary-border-color: "";
+  --button-secondary-border-color-hover: "";
+  --button-secondary-text-color: "";
+  --button-secondary-text-color-hover: "";
+  --link-color: "";
+  --link-color-hover: "";
 }
 
 body::before {
@@ -268,12 +295,9 @@ body.mask-hidden::after {
 .screen-reader-shortcut:focus {
   top: -25px;
   /* Overrides a:focus in the admin. See ticket #56789. */
-  color: #2271b1;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  color: var(--color-accent);
   text-decoration: none;
   /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-  outline-offset: -2px;
 }
 
 .hidden,
@@ -365,10 +389,7 @@ a:focus,
 a:focus .media-icon img,
 a:focus .plugin-icon,
 .wp-person a:focus .gravatar {
-  color: #043959;
-  box-shadow: 0 0 0 2px #2271b1;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
+  color: var(--color-accent-dark);
 }
 
 #adminmenu a:focus {
@@ -522,11 +543,11 @@ code {
   padding: 0;
   font-size: 13px;
   float: left;
-  color: #646970;
+  color: transparent;
 }
 
 .subsubsub a {
-  line-height: 2;
+  color: var(--color-primary);
   padding: 0.2em;
   text-decoration: none;
 }
@@ -537,16 +558,25 @@ code {
   font-weight: 400;
 }
 
-.subsubsub a.current {
-  font-weight: 600;
-  border: none;
-}
-
 .subsubsub li {
   display: inline-block;
   margin: 0;
   padding: 0;
   white-space: nowrap;
+  color: transparent;
+}
+
+.subsubsub li a {
+  background-color: var(--color-gray-1);
+  border-radius: 20px;
+  padding: 2px 12px;
+  display: inline-block;
+}
+
+.subsubsub a.current {
+  font-weight: 600;
+  border: none;
+  background-color: var(--color-accent-bg);
 }
 
 /* .widefat - main style for tables */
@@ -569,12 +599,20 @@ code {
 .widefat td,
 .widefat th {
   padding: 8px 10px;
+}
+
+.widefat:not(.plugins) td,
+.widefat:not(.plugins) th {
   border-bottom: 1px solid var(--border-color);
 }
 
 .widefat thead th,
 .widefat thead td {
   padding: 8px 10px;
+}
+
+.widefat:not(.plugins) thead th,
+.widefat:not(.plugins) thead td {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
@@ -582,6 +620,10 @@ code {
 .widefat tfoot th,
 .widefat tfoot td {
   padding: 8px 10px;
+}
+
+.widefat:not(.plugins) tfoot th,
+.widefat:not(.plugins) tfoot td {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
@@ -758,13 +800,6 @@ code {
   margin-left: 5px;
 }
 
-.wrap .page-title-action:focus {
-  border-color: #3582c4;
-  box-shadow: 0 0 0 1px #3582c4;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-}
-
 .wrap h1.long-header {
   padding-right: 0;
 }
@@ -893,8 +928,8 @@ img.emoji {
 #bulk-titles .ntdelbutton:before,
 .notice-dismiss:before {
   background: none;
-  color: #787c82;
-  content: "\f153";
+  color: var(--color-primary-darker);
+  content: "✕";
   display: block;
   font: normal 16px/20px dashicons;
   speak: never;
@@ -926,12 +961,6 @@ img.emoji {
 #bulk-titles .ntdelbutton:hover:before,
 #bulk-titles .ntdelbutton:focus:before {
   color: #d63638;
-}
-
-.tagchecklist .ntdelbutton:focus .remove-tag-icon:before {
-  box-shadow: 0 0 0 2px #2271b1;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
 }
 
 .key-labels label {
@@ -1096,11 +1125,9 @@ th.action-links {
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  margin: 12px 0 25px;
-  padding: 0 10px;
+  margin: 18px 0 32px;
+  padding: 0;
   width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-  border: 1px solid #c3c4c7;
   background: #fff;
   color: #50575e;
   font-size: 13px;
@@ -1153,24 +1180,24 @@ th.action-links {
 
 .filter-links li > a {
   display: inline-block;
-  margin: 0 10px;
-  padding: 15px 0;
-  border-bottom: 4px solid #fff;
+  margin: 0 4px;
+  background-color: var(--color-gray-1);
+  padding: 6px 14px;
   color: #646970;
   cursor: pointer;
+  border-radius: var(--border-radius);
 }
 
 .filter-links .current {
   box-shadow: none;
-  border-bottom: 4px solid #646970;
-  color: #1d2327;
+  background-color: var(--color-accent-bg);
 }
 
 .filter-links li > a:hover,
 .filter-links li > a:focus,
 .show-filters .filter-links a.current:hover,
 .show-filters .filter-links a.current:focus {
-  color: #135e96;
+  color: var(--color-accent);
 }
 
 .wp-filter .search-form {
@@ -1468,10 +1495,9 @@ div.updated,
 div.error {
   background: #fff;
   border: 1px solid #c3c4c7;
-  border-left-width: 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   margin: 5px 15px 2px;
-  padding: 1px 12px;
+  padding: 4px 12px 4px 46px;
+  position: relative;
 }
 
 div[class=update-message] { /* back-compat for pre-4.6 */
@@ -1532,44 +1558,71 @@ div.error p,
   color: #d63638;
 }
 
-.notice-dismiss:focus {
-  box-shadow: 0 0 0 2px #2271b1;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-}
-
-.notice-success,
+.woocommerce-message,
 div.updated {
-  border-left-color: #00a32a;
+  border-color: var(--color-info);
+  color: var(--color-info-dark);
+  background-color: var(--color-info-dark-opacity-01);
 }
 
-.notice-success.notice-alt {
-  background-color: #edfaef;
+.notice-success {
+  border-color: var(--color-success);
+  color: var(--color-success-dark);
+  background-color: var(--color-success-dark-opacity-01);
 }
 
 .notice-warning {
-  border-left-color: #dba617;
-}
-
-.notice-warning.notice-alt {
-  background-color: #fcf9e8;
+  border-color: var(--color-warning);
+  color: var(--color-warning-dark);
+  background-color: var(--color-warning-dark-opacity-01);
 }
 
 .notice-error,
 div.error {
-  border-left-color: #d63638;
+  border-color: var(--color-error);
+  color: var(--color-error-dark);
+  background-color: var(--color-error-dark-opacity-01);
 }
 
-.notice-error.notice-alt {
-  background-color: #fcf0f1;
+.notice-error::before,
+.notice-warning::before,
+.notice-success::before,
+.woocommerce-message::before,
+div.updated::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 26px;
+  height: 26px;
 }
 
-.notice-info {
-  border-left-color: #72aee6;
+.notice-error::before {
+  width: 28px;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.4' stroke='%23d63638' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z' /%3E%3C/svg%3E%0A");
 }
 
-.notice-info.notice-alt {
-  background-color: #f0f6fc;
+.woocommerce-message::before,
+div.updated::before {
+  width: 29px;
+  height: 29px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23076c9f' d='M142 176a6 6 0 0 1-6 6a14 14 0 0 1-14-14v-40a2 2 0 0 0-2-2a6 6 0 0 1 0-12a14 14 0 0 1 14 14v40a2 2 0 0 0 2 2a6 6 0 0 1 6 6m-18-82a10 10 0 1 0-10-10a10 10 0 0 0 10 10m106 34A102 102 0 1 1 128 26a102.12 102.12 0 0 1 102 102m-12 0a90 90 0 1 0-90 90a90.1 90.1 0 0 0 90-90'/%3E%3C/svg%3E");
+}
+
+.notice-success::before {
+  width: 23px;
+  height: 23px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%2300a32a' d='M4 7.5L7 10l4-5m-3.5 9.5a7 7 0 1 1 0-14a7 7 0 0 1 0 14Z'/%3E%3C/svg%3E");
+}
+
+.notice-warning::before {
+  width: 26px;
+  height: 26px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23dba617' d='M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2m0 26a12 12 0 1 1 12-12a12 12 0 0 1-12 12'/%3E%3Cpath fill='%23dba617' d='M15 8h2v11h-2zm1 14a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 22'/%3E%3C/svg%3E");
 }
 
 #plugin-information-footer .update-now:not(.button-disabled):before {
@@ -1630,6 +1683,7 @@ div.error {
 .media-upload-form .notice,
 .media-upload-form div.error {
   margin: 5px 0 15px;
+  border-radius: var(--border-radius);
 }
 
 .wrap #templateside .notice {
@@ -2112,7 +2166,7 @@ html.wp-toolbar {
   -ms-overflow-style: scrollbar; /* See ticket #48545 */
 }
 
-.widefat td:not(.plugin-title) strong {
+.widefat td:not(.plugin-title):not(.theme-title) strong {
   color: transparent;
 }
 
@@ -2376,15 +2430,17 @@ html.wp-toolbar {
 ------------------------------------------------------------------------------*/
 .nav-tab {
   float: left;
-  border: 1px solid #c3c4c7;
+  border: 1px solid var(--border-color);
   border-bottom: none;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   margin-left: 0.5em; /* half the font size so set the font size properly */
   padding: 5px 10px;
   font-size: 14px;
   line-height: 1.71428571;
   font-weight: 600;
-  background: #dcdcde;
-  color: #50575e;
+  background: var(--color-gray-1);
+  color: var(--color-primary);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -2398,8 +2454,8 @@ h3 .nav-tab,
 
 .nav-tab:hover,
 .nav-tab:focus {
-  background-color: #fff;
-  color: #3c434a;
+  background-color: var(--color-gray-2);
+  color: var(--color-primary);
 }
 
 .nav-tab-active,
@@ -2409,22 +2465,22 @@ h3 .nav-tab,
 
 .nav-tab-active {
   margin-bottom: -1px;
-  color: #3c434a;
+  color: var(--color-primary);
 }
 
 .nav-tab-active,
 .nav-tab-active:hover,
 .nav-tab-active:focus,
 .nav-tab-active:focus:active {
-  border-bottom: 1px solid #f0f0f1;
-  background: #f0f0f1;
-  color: #000;
+  border-bottom: 1px solid var(--bg-color);
+  background: var(--bg-color);
+  color: var(--color-primary);
 }
 
 h1.nav-tab-wrapper,
 .wrap h2.nav-tab-wrapper,
 .nav-tab-wrapper {
-  border-bottom: 1px solid #c3c4c7;
+  border-bottom: 1px solid var(--border-color);
   margin: 0;
   padding-top: 9px;
   padding-bottom: 0;
@@ -3171,13 +3227,6 @@ div.action-links {
   box-shadow: none;
 }
 
-.plugin-details-modal #TB_closeWindowButton:hover::after,
-.plugin-details-modal #TB_closeWindowButton:focus::after {
-  outline: 2px solid;
-  outline-offset: -4px;
-  border-radius: 4px;
-}
-
 .plugin-details-modal .tb-close-icon {
   display: none;
 }
@@ -3262,14 +3311,6 @@ img {
   line-height: 16px;
   vertical-align: top;
   color: #787c82;
-}
-
-.postbox .handle-order-higher:focus,
-.postbox .handle-order-lower:focus,
-.postbox .handlediv:focus {
-  border-radius: 50%;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
 }
 
 .postbox .handle-order-higher:focus .order-higher-indicator::before,
@@ -3374,16 +3415,6 @@ img {
 /* Remove outline, and create our own focus and hover styles */
 [role=treeitem] {
   outline: 0;
-}
-
-[role=treeitem] a:focus,
-[role=treeitem] .folder-label.focus {
-  color: #043959;
-  /* Reset default focus style. */
-  box-shadow: none;
-  /* Use an inset outline instead, so it's visible also over the current file item. */
-  outline: 2px solid #2271b1;
-  outline-offset: -2px;
 }
 
 [role=treeitem].hover,
@@ -3614,27 +3645,6 @@ img {
   color: #50575e; /* #fafafa background in the Widgets screen */
 }
 
-.widget-top:hover .widget-action,
-.widget-action:focus,
-.handlediv:hover,
-.handlediv:focus,
-.postbox .handlediv.button-link:hover,
-.postbox .handlediv.button-link:focus,
-.item-edit:hover,
-.item-edit:focus,
-.sidebar-name:hover .toggle-indicator,
-.accordion-section-title:hover:after {
-  color: #1d2327;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-}
-
-.widget-top .widget-action:focus .toggle-indicator:before {
-  box-shadow: 0 0 0 2px #2271b1;
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-}
-
 .control-section .accordion-section-title:after,
 .accordion-section-title:after {
   float: right;
@@ -3708,13 +3718,6 @@ img {
 }
 
 .accordion-section-title:focus {
-  /* Only visible in Windows High Contrast mode */
-  outline: 1px solid transparent;
-}
-
-.accordion-section-title:hover:after,
-.accordion-section-title:focus:after {
-  border-color: #a7aaad transparent;
   /* Only visible in Windows High Contrast mode */
   outline: 1px solid transparent;
 }

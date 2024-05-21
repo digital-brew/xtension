@@ -647,7 +647,7 @@ th.sortable a,
 th.sorted a {
   display: block;
   overflow: hidden;
-  padding: 8px;
+  padding: 8px 0;
 }
 
 th.sortable a:focus,
@@ -836,12 +836,14 @@ p.pagenav {
 }
 
 .column-title .post-state {
-  background: var(--color-accent-light);
+  background: var(--color-accent-bg);
   color: var(--color-accent-dark);
-  font-weight: 450;
-  padding: 3px 9px;
-  border-radius: 6px;
-  font-size: 13px;
+  font-weight: 550;
+  padding: 2px 12px;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .column-comment .comment-author {
@@ -854,6 +856,8 @@ p.pagenav {
   float: left;
   margin-right: 10px;
   margin-top: 1px;
+  border-radius: 100px;
+  overflow: hidden;
 }
 
 .row-actions {
@@ -1236,6 +1240,7 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 
 .plugins tr {
   background: #fff;
+  overflow: hidden !important;
 }
 
 .plugins p {
@@ -1274,7 +1279,34 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 
 .plugins .active td,
 .plugins .active th {
-  background-color: #f0f6fc;
+  background-color: var(--color-accent-bg);
+}
+
+.plugins .active .check-column {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  //border: 1px solid var(--color-accent);
+  //border-right: 0;
+}
+
+.plugins .active .column-description {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  //border: 1px solid var(--color-accent);
+  //border-left: 0;
+}
+
+.plugins .active.update .check-column {
+  border-bottom-left-radius: 0;
+}
+
+.plugins .active.update .column-description {
+  border-bottom-right-radius: 0;
+}
+
+.plugins .active.update + .plugin-update-tr .plugin-update {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 .plugins .update th,
@@ -1289,7 +1321,7 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 .plugin-install #the-list td,
 .upgrade .plugins td,
 .upgrade .plugins th {
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  //box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .plugins tr.active.plugin-update-tr + tr.inactive th,
@@ -1297,7 +1329,7 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 .plugins tr.active + tr.inactive th,
 .plugins tr.active + tr.inactive td {
   border-top: 1px solid rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02), inset 0 -1px 0 #dcdcde;
+  //box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02), inset 0 -1px 0 #dcdcde;
 }
 
 .plugins .update td,
@@ -1315,13 +1347,18 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 
 .plugins .active th.check-column,
 .plugin-update-tr.active td {
-  border-left: 4px solid #72aee6;
+  //border-left: 6px solid var(--color-accent);
 }
 
 .wp-list-table.plugins .plugin-title,
 .wp-list-table.plugins .theme-title {
   padding-right: 12px;
   white-space: nowrap;
+}
+
+.wp-list-table.plugins .active .plugin-title {
+  //border-top: 1px solid var(--color-accent);
+  //border-bottom: 1px solid var(--color-accent);
 }
 
 .plugins .plugin-title img,
@@ -1372,8 +1409,8 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
 
 .plugins-php .widefat tfoot th,
 .plugins-php .widefat tfoot td {
-  border-top-style: solid;
-  border-top-width: 1px;
+  //border-top-style: solid;
+  //border-top-width: 1px;
 }
 
 .plugins .plugin-update-tr .plugin-update {
@@ -1491,7 +1528,9 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
   width: 48.5%;
   width: calc( 50% - 8px );
   background-color: #fff;
-  border: 1px solid #dcdcde;
+  border: 1px solid var(--color-accent) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -1672,7 +1711,7 @@ div.action-links,
 .plugin-card-bottom {
   clear: both;
   padding: 12px 20px;
-  background-color: #f6f7f7;
+  background-color: var(--color-gray-1);
   border-top: 1px solid #dcdcde;
   overflow: hidden;
 }
@@ -2285,7 +2324,7 @@ div.action-links,
   .plugins tr.active + tr.inactive th.check-column,
   .plugins tr.active + tr.inactive td.column-description,
   .plugins .plugin-update-tr:before {
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    //box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   }
 
   .plugins tr.active + tr.inactive th.check-column,
@@ -2309,8 +2348,8 @@ div.action-links,
 
   .plugins .active.update + .plugin-update-tr:before,
   .plugins .active.updated + .plugin-update-tr:before {
-    background-color: #f0f6fc;
-    border-left: 4px solid #72aee6;
+    background-color: var(--color-accent-light);
+    //border-left: 6px solid var(--color-accent);
   }
 
   .plugins .plugin-update-tr .update-message {
@@ -2407,4 +2446,46 @@ tr.hentry:hover {
 
 tr.quick-edit-row:hover {
   background-color: var(--table-bg-hover);
+}
+
+table.plugins {
+  border-spacing: 20px;
+}
+
+.plugins thead, tr, th, td {
+  position: relative;
+  z-index: 1;
+}
+
+.plugins tr::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+  border-radius: var(--border-radius);
+  z-index: 0;
+}
+
+.plugins tr.active::before {
+  background-color: var(--color-accent-bg);
+}
+
+.plugins thead::after,
+.plugins tr::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.plugins thead::after {
+  top: -10px;
+}
+
+.plugins tr::after {
+  bottom: -10px;
 }

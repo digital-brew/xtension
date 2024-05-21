@@ -27,7 +27,7 @@
       return base_path() . '/config/' . $name .'.php';
     }
 
-    return '';
+    return plugins_path() . '/xtension/config/xtension.php';
   }
 
   function getArrayValueByKey($array, $key, $default = null) {

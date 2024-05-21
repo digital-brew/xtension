@@ -17,6 +17,10 @@ class Posts
     if (!getConfig('xtension.posts.enabled')) {
       Action::add( 'init', [ $instance, 'deregisterPosts' ] );
     }
+
+    if ( getConfig( 'xtension.admin.user.list.remove_columns' ) !== null ) {
+      add_filter('manage_users_columns', [$instance, 'removeUserArchiveColumn']);
+    }
   }
 
   public function deregisterPosts(): void
