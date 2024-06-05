@@ -58,16 +58,22 @@ class Table
 
       foreach ($columns as $column) {
         if ($column === 'registration_date') {
-          $this->addRegistrationDateSortableColumn();
+          $this->addRegistrationDateUsersSortableColumn();
         }
         if ($column === 'last_login') {
-          $this->addLastLoginSortableColumn();
+          $this->addLastLoginUsersSortableColumn();
+        }
+        if ($column === 'total_sales') {
+          $this->addTotalSalesProductsSortableColumn();
+        }
+        if ($column === 'purchased') {
+          $this->addPurchasedProductsOrdersColumn();
         }
       }
     }
   }
 
-  public function addRegistrationDateSortableColumn(): void
+  public function addRegistrationDateUsersSortableColumn(): void
   {
     /*
    * Creating a column (it is also possible to remove some default ones)
@@ -106,7 +112,7 @@ class Table
     } );
   }
 
-  public function addLastLoginSortableColumn(): void
+  public function addLastLoginUsersSortableColumn(): void
   {
     Filter::add( 'manage_users_columns', function ( $columns ) {
       $columns['last_login'] = 'Last Login'; // column ID / column Title
@@ -148,6 +154,83 @@ class Table
       }
       return $query;
     } );
+  }
+
+  public function addTotalSalesProductsSortableColumn(): void
+  {
+    Filter::add('manage_edit-product_columns', function ($column_name) {
+      return wp_parse_args(
+        array(
+          'total_sales' => 'Total Sales'
+        ),
+        $column_name
+      );
+    });
+
+    Action::add('manage_posts_custom_column', function ($column_name, $product_id) {
+      if('total_sales' === $column_name) {
+        echo get_post_meta($product_id, 'total_sales', true);
+      }
+    }, 25, 2);
+
+    Filter::add('manage_edit-product_sortable_columns', function ($sortable_columns) {
+      return wp_parse_args(
+        array(
+          'total_sales' => 'by_total_sales'
+        ),
+        $sortable_columns
+      );
+    });
+
+    Action::add('pre_get_posts', function($query) {
+      if( ! is_admin() || empty( $_GET[ 'orderby' ] ) || empty( $_GET[ 'order' ] ) ) {
+        return $query;
+      }
+
+      if( 'by_total_sales' === $_GET[ 'orderby' ] ) {
+        $query->set( 'meta_key', 'total_sales' );
+        $query->set( 'orderby', 'meta_value_num' );
+        $query->set( 'order', $_GET[ 'order' ] );
+      }
+
+      return $query;
+    } );
+  }
+
+  public function addPurchasedProductsOrdersColumn(): void
+  {
+    // legacy – for CPT-based orders
+//    add_filter( 'manage_edit-shop_order_columns', 'misha_order_items_column' );
+// for HPOS-based orders
+    Filter::add( 'manage_woocommerce_page_wc-orders_columns', function( $columns ) {
+
+      // let's add our column before "Total"
+      return array_slice( $columns, 0, 4, true ) // 4 columns before
+             + array( 'order_products' => 'Purchased products' ) // our column is going to be 5th
+             + array_slice( $columns, 4, NULL, true );
+
+    });
+
+
+// legacy – for CPT-based orders
+//    add_action( 'manage_shop_order_posts_custom_column', 'misha_populate_order_items_column', 25, 2 );
+// for HPOS-based orders
+    Action::add( 'manage_woocommerce_page_wc-orders_custom_column', function ( $column_name, $order_or_order_id ) {
+
+      // legacy CPT-based order compatibility
+      $order = $order_or_order_id instanceof WC_Order ? $order_or_order_id : wc_get_order( $order_or_order_id );
+
+      if( 'order_products' === $column_name ) {
+        $items = $order->get_items();
+        if( ! is_wp_error( $items ) ) {
+          foreach( $items as $item ) {
+            echo $item[ 'quantity' ] .' × <a href="' . get_edit_post_link( $item[ 'product_id' ] ) . '">'. $item[ 'name' ] .'</a><br />';
+            // you can also use $order_item->variation_id parameter
+            // by the way, $item[ 'name' ] will display variation name too
+          }
+        }
+      }
+    }, 25, 2 );
   }
 
   /**

@@ -46,13 +46,18 @@ input[type=time],
 input[type=url],
 input[type=week],
 select,
-textarea {
+textarea,
+.select2-selection {
   font-size: var(--font-size);
   color: var(--color-gray-5);
-  border: 1px solid var(--color-gray-1);
+  border: 1px solid var(--color-gray-1) !important;
   box-shadow: none;
   border-radius: var(--border-radius);
-  background-color: var(--color-gray-1);
+  background-color: var(--color-gray-1) !important;
+}
+
+.select2-results__option--highlighted {
+  background-color: var(--color-accent) !important;
 }
 
 input[type=text],
@@ -316,6 +321,7 @@ input[type=radio].disabled:checked:before {
   color: var(--color-gray-5);
   border-color: var(--color-gray-1);
   box-shadow: none;
+  border: none;
   border-radius: var(--border-radius);
   padding: 0 24px 0 8px;
   min-height: 30px;
@@ -324,6 +330,21 @@ input[type=radio].disabled:checked:before {
   /* The SVG is arrow-down-alt2 from Dashicons. */
   background: var(--color-gray-1) url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E") no-repeat right 5px top 55%;
   background-size: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type=submit] {
+  background: var(--color-gray-1);
+  font-size: var(--font-size);
+  line-height: 2; /* 28px */
+  color: var(--color-gray-5);
+  border-color: var(--color-gray-1);
+  box-shadow: none;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0 16px;
+  min-height: 30px;
   cursor: pointer;
   vertical-align: middle;
 }

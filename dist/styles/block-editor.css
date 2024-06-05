@@ -32,7 +32,6 @@
   --button-border-color: var(--color-primary);
   --button-border-color-hover: var(--color-primary-darker);
   --button-text-color: #fff;
-
   --color-info: #076c9f;
   --color-info-dark: #045075;
   --color-info-dark-opacity-01: rgba(4, 80, 117, 0.1);
@@ -45,19 +44,57 @@
   --color-error: #d63638;
   --color-error-dark: #8c0f10;
   --color-error-dark-opacity-01: rgba(214, 54, 56, 0.1);
+  --button-primary-bg-color: "";
+  --button-primary-bg-color-hover: "";
+  --button-primary-border-color: "";
+  --button-primary-border-color-hover: "";
+  --button-primary-text-color: "";
+  --button-primary-text-color-hover: "";
+  --button-secondary-bg-color: "";
+  --button-secondary-bg-color-hover: "";
+  --button-secondary-border-color: "";
+  --button-secondary-border-color-hover: "";
+  --button-secondary-text-color: "";
+  --button-secondary-text-color-hover: "";
+  --link-color: "";
+  --link-color-hover: "";
+}
 
-  --button-primary-bg-color: '';
-  --button-primary-bg-color-hover: '';
-  --button-primary-border-color: '';
-  --button-primary-border-color-hover: '';
-  --button-primary-text-color: '';
-  --button-primary-text-color-hover: '';
-  --button-secondary-bg-color: '';
-  --button-secondary-bg-color-hover: '';
-  --button-secondary-border-color: '';
-  --button-secondary-border-color-hover: '';
-  --button-secondary-text-color: '';
-  --button-secondary-text-color-hover: '';
-  --link-color: '';
-  --link-color-hover: '';
+.wp-admin .editor-post-title {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 52px;
+  font-weight: 400;
+  margin-bottom: 44px;
+  margin-top: 28px;
+}
+
+.is-root-container.block-editor-block-list__layout {
+  padding: 0 2px;
+}
+.is-root-container.block-editor-block-list__layout .block-editor-block-list__block,
+.is-root-container.block-editor-block-list__layout .block-list-appender {
+  max-width: 1920px !important;
+}
+.is-root-container.block-editor-block-list__layout .block-editor-button-block-appender:hover {
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+  color: var(--color-accent);
+}
+
+.components-button.is-primary {
+  box-shadow: none !important;
+}
+
+.components-button.is-primary:hover:not(:disabled),
+.components-button.is-primary:active:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable=true]):focus:after {
+  box-shadow: none;
+  outline: 2px solid var(--color-accent);
+}
+
+.components-button.block-editor-block-types-list__item:not(:disabled):focus {
+  box-shadow: inset 0 0 0 var(--color-accent) var(--color-accent);
 }

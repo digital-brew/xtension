@@ -1,6 +1,6 @@
 :root {
   --color-primary: #333;
-  --color-primary-darker: #111;
+  --color-primary-darker: #1a1a1a;
   --outline-color: var(--color-accent);
   --wrapper-spacing: 12px;
   --adminbar-height: 48px;

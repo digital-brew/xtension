@@ -29,6 +29,17 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 
 /***/ }),
 
+/***/ "./assets/styles/custom.scss":
+/*!***********************************!*\
+  !*** ./assets/styles/custom.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2N1c3RvbS5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2N1c3RvbS5zY3NzPzliN2QiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/custom.scss\n");
+
+/***/ }),
+
 /***/ "./assets/styles/dashboard.scss":
 /*!**************************************!*\
   !*** ./assets/styles/dashboard.scss ***!
@@ -36,7 +47,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2Rhc2hib2FyZC5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2Rhc2hib2FyZC5zY3NzP2NkZjciXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/dashboard.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2Rhc2hib2FyZC5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2Rhc2hib2FyZC5zY3NzP2ZiOGYiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/dashboard.scss\n");
 
 /***/ }),
 
@@ -47,7 +58,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2VkaXQuc2NzcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9AZGlnaXRhbC1icmV3L3h0ZW5zaW9uLy4vYXNzZXRzL3N0eWxlcy9lZGl0LnNjc3M/OTc3OCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./assets/styles/edit.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2VkaXQuc2NzcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9AZGlnaXRhbC1icmV3L3h0ZW5zaW9uLy4vYXNzZXRzL3N0eWxlcy9lZGl0LnNjc3M/MmMyNiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./assets/styles/edit.scss\n");
 
 /***/ }),
 
@@ -58,7 +69,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2Zvcm1zLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvZm9ybXMuc2Nzcz81ODlkIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/forms.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2Zvcm1zLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvZm9ybXMuc2Nzcz8xNDgzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/forms.scss\n");
 
 /***/ }),
 
@@ -69,7 +80,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2xpc3QtdGFibGVzLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvbGlzdC10YWJsZXMuc2Nzcz9jMGI0Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/list-tables.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2xpc3QtdGFibGVzLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvbGlzdC10YWJsZXMuc2Nzcz81MmE4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/list-tables.scss\n");
 
 /***/ }),
 
@@ -80,7 +91,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL25hdi1tZW51cy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL25hdi1tZW51cy5zY3NzPzRhOGUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/nav-menus.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL25hdi1tZW51cy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL25hdi1tZW51cy5zY3NzPzYzNGYiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/nav-menus.scss\n");
 
 /***/ }),
 
@@ -91,7 +102,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3ZhcmlhYmxlcy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL3ZhcmlhYmxlcy5zY3NzPzZkNzYiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/variables.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3ZhcmlhYmxlcy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL3ZhcmlhYmxlcy5zY3NzPzA1ZWIiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/variables.scss\n");
 
 /***/ }),
 
@@ -102,7 +113,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3djLXN0eWxlcy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL3djLXN0eWxlcy5zY3NzP2UxNjYiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/wc-styles.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3djLXN0eWxlcy5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL3djLXN0eWxlcy5zY3NzPzEyOTciXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/wc-styles.scss\n");
 
 /***/ }),
 
@@ -113,7 +124,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3dvb2NvbW1lcmNlLXN0eWxlLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvd29vY29tbWVyY2Utc3R5bGUuc2Nzcz81YjM4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/woocommerce-style.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL3dvb2NvbW1lcmNlLXN0eWxlLnNjc3MiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vQGRpZ2l0YWwtYnJldy94dGVuc2lvbi8uL2Fzc2V0cy9zdHlsZXMvd29vY29tbWVyY2Utc3R5bGUuc2Nzcz9iMmE4Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpblxuZXhwb3J0IHt9OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./assets/styles/woocommerce-style.scss\n");
 
 /***/ }),
 
@@ -139,6 +150,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./assets/styles/block-editor.scss":
+/*!*****************************************!*\
+  !*** ./assets/styles/block-editor.scss ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2Jsb2NrLWVkaXRvci5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2Jsb2NrLWVkaXRvci5zY3NzPzE1ODAiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/block-editor.scss\n");
+
+/***/ }),
+
 /***/ "./assets/styles/buttons.scss":
 /*!************************************!*\
   !*** ./assets/styles/buttons.scss ***!
@@ -146,7 +168,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2J1dHRvbnMuc2NzcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9AZGlnaXRhbC1icmV3L3h0ZW5zaW9uLy4vYXNzZXRzL3N0eWxlcy9idXR0b25zLnNjc3M/YTkyZiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./assets/styles/buttons.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2J1dHRvbnMuc2NzcyIsIm1hcHBpbmdzIjoiO0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9AZGlnaXRhbC1icmV3L3h0ZW5zaW9uLy4vYXNzZXRzL3N0eWxlcy9idXR0b25zLnNjc3M/YTE4OSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./assets/styles/buttons.scss\n");
 
 /***/ }),
 
@@ -157,18 +179,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2NvbW1vbi5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2NvbW1vbi5zY3NzP2I3MWQiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/common.scss\n");
-
-/***/ }),
-
-/***/ "./assets/styles/custom.scss":
-/*!***********************************!*\
-  !*** ./assets/styles/custom.scss ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2N1c3RvbS5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2N1c3RvbS5zY3NzP2YyNWMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/custom.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9hc3NldHMvc3R5bGVzL2NvbW1vbi5zY3NzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL0BkaWdpdGFsLWJyZXcveHRlbnNpb24vLi9hc3NldHMvc3R5bGVzL2NvbW1vbi5zY3NzP2VkN2UiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./assets/styles/common.scss\n");
 
 /***/ })
 
@@ -259,9 +270,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/scripts/app": 0,
-/******/ 			"styles/custom": 0,
 /******/ 			"styles/common": 0,
 /******/ 			"styles/buttons": 0,
+/******/ 			"styles/block-editor": 0,
 /******/ 			"styles/admin-menu": 0,
 /******/ 			"styles/admin-bar": 0,
 /******/ 			"styles/woocommerce-style": 0,
@@ -271,7 +282,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 			"styles/list-tables": 0,
 /******/ 			"styles/forms": 0,
 /******/ 			"styles/edit": 0,
-/******/ 			"styles/dashboard": 0
+/******/ 			"styles/dashboard": 0,
+/******/ 			"styles/custom": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -321,20 +333,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/scripts/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/admin-bar.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/admin-menu.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/buttons.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/common.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/custom.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/dashboard.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/edit.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/forms.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/list-tables.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/nav-menus.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/variables.scss")))
-/******/ 	__webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/wc-styles.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["styles/custom","styles/common","styles/buttons","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard"], () => (__webpack_require__("./assets/styles/woocommerce-style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/scripts/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/admin-bar.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/admin-menu.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/block-editor.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/buttons.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/common.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/custom.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/dashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/edit.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/forms.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/list-tables.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/nav-menus.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/variables.scss")))
+/******/ 	__webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/wc-styles.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["styles/common","styles/buttons","styles/block-editor","styles/admin-menu","styles/admin-bar","styles/woocommerce-style","styles/wc-styles","styles/variables","styles/nav-menus","styles/list-tables","styles/forms","styles/edit","styles/dashboard","styles/custom"], () => (__webpack_require__("./assets/styles/woocommerce-style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -1270,6 +1270,12 @@ ul.cat-checklist input[name="post_category[]"]:indeterminate::before {
   padding: 0;
 }
 
+.row-actions button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .plugins .inactive td,
 .plugins .inactive th,
 .plugins .active td,

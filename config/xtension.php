@@ -115,6 +115,24 @@
             'add' => [],
             'remove' => []
           ]
+        ],
+        'edit-product' => [
+          'actions' => [
+            'remove' => [] // available options: edit, trash, view, inline hide-if-no-js
+          ],
+          'columns' => [
+            'add' => ['total_sales'],
+            'remove' => ['product_tag', 'featured']
+          ]
+        ],
+        'orders' => [
+          'actions' => [
+            'remove' => [] // available options: edit, trash, view, inline hide-if-no-js
+          ],
+          'columns' => [
+            'add' => ['purchased'],
+            'remove' => []
+          ]
         ]
       ],
     ],

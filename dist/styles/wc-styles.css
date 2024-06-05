@@ -1,6 +1,6 @@
 :root {
   --color-primary: #333;
-  --color-primary-darker: #111;
+  --color-primary-darker: #1a1a1a;
   --outline-color: var(--color-accent);
   --wrapper-spacing: 12px;
   --adminbar-height: 48px;
@@ -97,9 +97,13 @@ table.wc_status_table.widefat {
 }
 
 .components-button.is-primary {
-  background: var(--color-accent);
+  background: var(--color-accent) !important;
   color: var(--bg-color);
   border-radius: var(--border-radius);
+}
+
+.components-button.is-primary[aria-disabled=true]:enabled {
+  background: #14adad !important;
 }
 
 .components-button.is-secondary {

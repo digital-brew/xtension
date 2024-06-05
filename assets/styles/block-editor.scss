@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+.wp-admin {
+  .editor-post-title {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 44px;
+    margin-top: 28px;
+  }
+}
+
+.is-root-container.block-editor-block-list__layout {
+  padding: 0 2px;
+
+  .block-editor-block-list__block,
+  .block-list-appender {
+    max-width: 1920px !important;
+  }
+
+  .block-editor-button-block-appender:hover {
+    box-shadow: inset 0 0 0 1px var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+.components-button.is-primary {
+  box-shadow: none !important;
+}
+
+.components-button.is-primary:hover:not(:disabled),
+.components-button.is-primary:active:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable=true]):focus:after {
+  box-shadow: none;
+  outline: 2px solid var(--color-accent);
+}
+
+.components-button.block-editor-block-types-list__item:not(:disabled):focus {
+  box-shadow: inset 0 0 0 var(--color-accent) var(--color-accent);
+}

@@ -42,7 +42,7 @@ class Assets
 
   public function reloadStyles(): void
   {
-    $styles = ['admin-bar', 'admin-menu', 'buttons', 'common', 'custom', 'dashboard', 'edit', 'forms', 'list-tables', 'nav-menus', 'wc-styles'];
+    $styles = ['admin-bar', 'admin-menu', 'buttons', 'common', 'custom', 'dashboard', 'edit', 'forms', 'list-tables', 'nav-menus', 'block-editor', 'wc-styles'];
 
     $this->deregisterStyles($styles);
     $this->registerStyles($styles);

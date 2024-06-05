@@ -446,3 +446,66 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .acf-fields label {
   font-size: 13px;
 }
+
+.wp-sheet-editor_page_vgse-bulk-edit-product #db-wrapper-3 {
+  overflow-x: hidden;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product #wpcontent {
+  overflow: hidden;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product #wpbody-content {
+  padding-bottom: 0;
+}
+
+.wp-sheet-editor_page_vg_sheet_editor input[type=checkbox]:checked::before,
+.wp-sheet-editor_page_vgse-bulk-edit-product input[type=checkbox]:checked::before {
+  background-color: transparent !important;
+}
+
+html.wpse-full-screen #db-wrapper-2 {
+  left: 0 !important;
+}
+
+.ht_clone_bottom handsontable {
+  display: none !important;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product .sheet-logo-wrapper .logo-link {
+  display: none !important;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product .vg-secondary-toolbar {
+  margin-top: 60px !important;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product .wpse-full-screen-notice {
+  top: -32px !important;
+}
+
+.wp-sheet-editor_page_vgse-bulk-edit-product .wpse-full-screen-notice .wpse-full-screen-notice-content {
+  margin: 0 360px 0 auto !important;
+}
+
+#adminmenu #toplevel_page_vg_sheet_editor_setup .wp-menu-image img {
+  padding: 0;
+  margin-left: 4px;
+  height: 13px;
+}
+
+#adminmenu #toplevel_page_yith_plugin_panel .wp-menu-image img {
+  padding: 0 4px;
+  height: 15px;
+}
+
+a[data-name=add],
+.acf-block-body .acf-button {
+  background: var(--color-gray-1) !important;
+  border: 1px solid var(--color-gray-1) !important;
+  color: var(--color-gray-6) !important;
+  text-decoration: none;
+  padding: 5px 12px;
+  margin-left: 6px;
+  border-radius: var(--border-radius);
+}

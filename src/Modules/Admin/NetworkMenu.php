@@ -16,7 +16,7 @@ class NetworkMenu
     $instance = new self();
 
     Action::add('network_admin_menu', [ $instance, 'disableNodes'], 999);
-//    Action::add('network_admin_menu', [ $instance, 'enableNodes'], 999);
+    Action::add('network_admin_menu', [ $instance, 'enableNodes'], 999);
 //    Action::add('network_admin_menu', [ $instance, 'maybeDisableCustomizer']);
 //    Action::add('network_admin_head', [ $instance, 'maybeDisableWooCommerceSeparator'], 999);
   }
@@ -42,7 +42,7 @@ class NetworkMenu
    */
   public function enableNodes(): void
   {
-    $nodes = getConfig('xtension.admin.menu', []);
+    $nodes = getConfig('xtension.admin.network_menu', []);
     foreach ($nodes as $node => $value ) {
       if (isset($value['enabled']) && $value['enabled'] === true) {
         if ( isset($value['is_label'])) {
