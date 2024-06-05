@@ -31,13 +31,16 @@ class Assets
     }
   }
 
+  /**
+   * @throws BindingResolutionException
+   */
   public function loadScripts(): void
   {
-    Action::add( 'admin_enqueue_scripts', function() {
-      if ($this->canLoadAssets()) {
+    if ($this->canLoadAssets()) {
+      Action::add( 'admin_enqueue_scripts', function() {
         wp_enqueue_script( 'admin-scripts', $this->assets( 'scripts/app.js' ), [], $this->getVersion(), true );
-      }
-    }, 999 );
+      }, 999 );
+    }
   }
 
   public function reloadStyles(): void
@@ -48,39 +51,48 @@ class Assets
     $this->registerStyles($styles);
   }
 
+  /**
+   * @throws BindingResolutionException
+   */
   public function deregisterStyles($styles): void
   {
-    Action::add('admin_init', function($hook) use ($styles) {
-      if ($this->canLoadAssets()) {
+    if ($this->canLoadAssets()) {
+      Action::add('admin_init', function($hook) use ($styles) {
         foreach ( $styles as $style ) {
           wp_deregister_style( $style );
         }
-      }
-    }, 999);
+      }, 999);
+    }
   }
 
+  /**
+   * @throws BindingResolutionException
+   */
   public function registerStyles($styles): void
   {
-    Action::add('admin_enqueue_scripts', function($hook) use ($styles) {
-      if ($this->canLoadAssets()) {
+    if ($this->canLoadAssets()) {
+      Action::add('admin_enqueue_scripts', function($hook) use ($styles) {
         foreach ( $styles as $style ) {
           wp_enqueue_style( $style, $this->assets( 'styles/' . $style . '.css' ), [], $this->getVersion() );
         }
-      }
-    }, 999);
+      }, 999);
+    }
   }
 
+  /**
+   * @throws BindingResolutionException
+   */
   public function loadFonts(): void
   {
-    Action::add( 'admin_head', function($hook) {
-      if ($this->canLoadAssets()) {
+    if ($this->canLoadAssets()) {
+      Action::add( 'admin_head', function($hook) {
         echo '
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
         ';
-      }
-    }, 999 );
+      }, 999 );
+    }
   }
 
   public function assets($asset): string
