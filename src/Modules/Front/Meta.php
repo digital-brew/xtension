@@ -10,7 +10,7 @@ class Meta
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     if (!getConfig( 'xtension.frontend.meta_tags.enabled' )) {
       Action::remove( 'wp_head', 'wp_generator' );

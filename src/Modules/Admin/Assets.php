@@ -21,7 +21,7 @@ class Assets
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     $instance = new self();
     if (getConfig('xtension.admin.new_look', false)) {
@@ -45,7 +45,20 @@ class Assets
 
   public function reloadStyles(): void
   {
-    $styles = ['admin-bar', 'admin-menu', 'buttons', 'common', 'custom', 'dashboard', 'edit', 'forms', 'list-tables', 'nav-menus', 'block-editor', 'wc-styles'];
+    $styles = [
+      'admin-bar',
+      'admin-menu',
+      'buttons',
+      'common',
+      'custom',
+      'dashboard',
+      'edit',
+      'forms',
+      'list-tables',
+      'nav-menus',
+      'block-editor',
+      'wc-styles'
+    ];
 
     $this->deregisterStyles($styles);
     $this->registerStyles($styles);

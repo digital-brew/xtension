@@ -11,7 +11,7 @@ class Feed
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     if (!getConfig( 'xtension.frontend.feed.enabled' )) {
       Action::add( 'after_setup_theme', function () {

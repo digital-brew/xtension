@@ -10,7 +10,7 @@ class Footer
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     if ( getConfig( 'xtension.admin.footer_text' ) !== null ) {
       Filter::add('admin_footer_text', function () {

@@ -10,7 +10,7 @@ class Emoji
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     if (!getConfig( 'xtension.frontend.emoji.enabled' )) {
       Action::remove( 'wp_print_styles', 'print_emoji_styles' );

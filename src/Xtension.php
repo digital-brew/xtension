@@ -17,40 +17,42 @@ use DigitalBrew\Xtension\Modules\Front\Meta;
 use DigitalBrew\Xtension\Modules\General;
 use DigitalBrew\Xtension\Modules\LastLoginTimestamp;
 use DigitalBrew\Xtension\Modules\Posts;
-use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Xtension
 {
-  private static $instance;
-
-  public static function getInstance(): Xtension
+  public static function getServices(): array
   {
-    if(!self::$instance) {
-      self::$instance = new self();
-    }
-
-    return self::$instance;
+    return [
+      Assets::class,
+      Bar::class,
+      Comments::class,
+      Dashboard::class,
+      Emoji::class,
+      Feed::class,
+      Footer::class,
+      General::class,
+      JQuery::class,
+      LastLoginTimestamp::class,
+      Menu::class,
+      Meta::class,
+      NetworkMenu::class,
+      Posts::class,
+      Table::class
+    ];
   }
 
-  /**
-   * @throws BindingResolutionException
-   */
-  public function setup(): void
+  public static function registerServices(): void
   {
-    Assets::init();
-    Bar::init();
-    Comments::init();
-    Dashboard::init();
-    Emoji::init();
-    Feed::init();
-    Footer::init();
-    General::init();
-    JQuery::init();
-    LastLoginTimestamp::init();
-    Menu::init();
-    Meta::init();
-    NetworkMenu::init();
-    Posts::init();
-    Table::init();
+    foreach (self::getServices() as $class) {
+      $service = self::instantiate($class);
+      if (method_exists($service, 'register')) {
+        $service->register();
+      }
+    }
+  }
+
+  private static function instantiate($class)
+  {
+    return new $class();
   }
 }

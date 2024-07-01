@@ -10,7 +10,7 @@ class Posts
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     $instance = new self();
 

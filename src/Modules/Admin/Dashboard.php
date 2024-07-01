@@ -7,7 +7,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Dashboard
 {
-  public static function init(): void
+  public static function register(): void
   {
     $instance = new self();
 

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 
 class NetworkMenu
 {
-  public static function init(): void
+  public static function register(): void
   {
     if (!is_multisite()) {
       return;

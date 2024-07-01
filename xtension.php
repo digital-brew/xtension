@@ -16,9 +16,13 @@
    * License URI: http://www.gnu.org/licenses/gpl-2.0.html
    */
 
+use DigitalBrew\Hooks\Action;
+use DigitalBrew\Xtension\Xtension;
 
 require __DIR__ . '/vendor/autoload.php';
 
-add_action('plugins_loaded', function () {
-    (\DigitalBrew\Xtension\Xtension::getInstance())->setup();
-}, 999);
+if (class_exists('DigitalBrew\\Xtension\\Xtension')) {
+  Action::add('plugins_loaded', function () {
+    Xtension::registerServices();
+  }, 999);
+}

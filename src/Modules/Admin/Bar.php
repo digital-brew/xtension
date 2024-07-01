@@ -7,7 +7,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Bar
 {
-  public static function init(): void
+  public static function register(): void
   {
     $instance = new self();
 

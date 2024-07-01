@@ -10,7 +10,7 @@ class LastLoginTimestamp
   /**
    * @throws BindingResolutionException
    */
-  public static function init(): void
+  public static function register(): void
   {
     if (getConfig('xtension.last_login_timestamp.enabled')) {
       Action::add( 'wp_login', function ( $user_login, $user ) {
