@@ -13,6 +13,10 @@ class Assets
 
   public function __construct()
   {
+    if( !function_exists('get_plugin_data') ){
+      require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    }
+    
     $plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/xtension/xtension.php');
     $this->version = $plugin_data['Version'];
     $this->assets_path = plugins_url('xtension/dist/');
