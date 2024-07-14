@@ -1,4 +1,6 @@
 {
     "version": 2,
-    "paths": []
+    "paths": [
+        "/Volumes/Work/Code/Laravel/hooks"
+    ]
 }
