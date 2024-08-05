@@ -225,10 +225,16 @@
             "name": "digital-brew/hooks",
             "version": "dev-main",
             "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/digital-brew/hooks.git",
+                "reference": "094cba710c98f9790cfe626d0e3ebba222217fe5"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Volumes/Work/Code/Laravel/hooks",
-                "reference": "b95039ddd88abe8f5039af9550df7583ae3d4ff3"
+                "type": "zip",
+                "url": "https://api.github.com/repos/digital-brew/hooks/zipball/094cba710c98f9790cfe626d0e3ebba222217fe5",
+                "reference": "094cba710c98f9790cfe626d0e3ebba222217fe5",
+                "shasum": ""
             },
             "require": {
                 "php": "^8.1"
@@ -239,6 +245,8 @@
                 "symfony/var-dumper": "^5.1",
                 "vimeo/psalm": "^3.11"
             },
+            "time": "2024-08-05T13:14:27+00:00",
+            "default-branch": true,
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -275,8 +283,9 @@
                 "wordpress",
                 "wordpress plugin api"
             ],
-            "transport-options": {
-                "relative": false
+            "support": {
+                "source": "https://github.com/digital-brew/hooks/tree/main",
+                "issues": "https://github.com/digital-brew/hooks/issues"
             },
             "install-path": "../digital-brew/hooks"
         },
