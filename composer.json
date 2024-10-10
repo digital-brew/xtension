@@ -1,7 +1,10 @@
 {
   "name": "digital-brew/xtension",
   "description": "Simply extend WP Admin.",
-  "keywords": ["themosis", "plugin"],
+  "keywords": [
+    "themosis",
+    "plugin"
+  ],
   "authors": [
     {
       "name": "Rafal Pajak",
@@ -18,10 +21,10 @@
     ]
   },
   "type": "wordpress-plugin",
-  "repositories":[
+  "repositories": [
     {
-      "type":"composer",
-      "url":"https://wpackagist.org"
+      "type": "composer",
+      "url": "https://wpackagist.org"
     },
     {
       "type": "vcs",
@@ -30,9 +33,8 @@
   ],
   "require": {
     "php": "^8.1",
-    "composer/installers" : "^2.2",
-    "digital-brew/hooks": "dev-main",
-    "illuminate/support": "^10.0|^11.0"
+    "composer/installers": "^2.2",
+    "digital-brew/hooks": "dev-main"
   },
   "config": {
     "allow-plugins": {
