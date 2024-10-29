@@ -2,20 +2,18 @@
 
 namespace DigitalBrew\Xtension\Modules;
 
-use DigitalBrew\Hooks\Action;
-
 class Posts
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
-        if (! getConfig('xtension.posts.enabled')) {
-            Action::add('init', [$instance, 'deregisterPosts']);
+        if (!getConfig('xtension.posts.enabled')) {
+            add_action('init', [ $instance, 'deregisterPosts' ]);
         }
 
         if (getConfig('xtension.admin.user.list.remove_columns') !== null) {
-            add_filter('manage_users_columns', [$instance, 'removeUserArchiveColumn']);
+            add_filter('manage_users_columns', [ $instance, 'removeUserArchiveColumn' ]);
         }
     }
 
@@ -31,4 +29,3 @@ class Posts
         unregister_widget('WP_Widget_Categories');
     }
 }
-

@@ -2,22 +2,20 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-
 class NetworkMenu
 {
     public static function register(): void
     {
-        if (! is_multisite()) {
+        if (!is_multisite()) {
             return;
         }
 
-        $instance = new self;
+        $instance = new self();
 
-        Action::add('network_admin_menu', [$instance, 'disableNodes'], 999);
-        Action::add('network_admin_menu', [$instance, 'enableNodes'], 999);
-        //    Action::add('network_admin_menu', [ $instance, 'maybeDisableCustomizer']);
-        //    Action::add('network_admin_head', [ $instance, 'maybeDisableWooCommerceSeparator'], 999);
+        add_action('network_admin_menu', [ $instance, 'disableNodes' ], 999);
+        add_action('network_admin_menu', [ $instance, 'enableNodes' ], 999);
+        //    add_action('network_admin_menu', [ $instance, 'maybeDisableCustomizer']);
+        //    add_action('network_admin_head', [ $instance, 'maybeDisableWooCommerceSeparator'], 999);
     }
 
     public function disableNodes(): void
@@ -43,7 +41,7 @@ class NetworkMenu
                         $value['label'],
                         $value['label'],
                         '',
-                        'admin_menu_label_'.$node,
+                        'admin_menu_label_' . $node,
                         '',
                         'dashicons-minus',
                         $value['position']
@@ -70,4 +68,3 @@ class NetworkMenu
         }
     }
 }
-

@@ -25,16 +25,12 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:digital-brew/hooks"
     }
   ],
   "require": {
     "php": "^8.1",
     "composer/installers": "^2.2",
-    "digital-brew/hooks": "dev-main"
+    "roots/acorn": "^4.3"
   },
   "config": {
     "allow-plugins": {

@@ -1,13 +1,13 @@
 <?php
 
-function getConfig($value, $default = null): mixed
+function getConfig ( $value, $default = null ): mixed
 {
-    $filename = explode('.', $value)[0];
+    $filename = explode( '.', $value )[0];
 
-    $array = include findConfig($filename);
-    $key = str_replace($filename.'.', '', $value);
+    $array = include findConfig( $filename );
+    $key = str_replace( $filename . '.', '', $value );
 
-    return getArrayValueByKey($array, $key, $default);
+    return getArrayValueByKey( $array, $key, $default );
 }
 
 function findConfig($name): string
@@ -16,31 +16,30 @@ function findConfig($name): string
         return get_template_directory().'/config/'.$name.'.php';
     }
 
-    if (file_exists(base_path().'/config/'.$name.'.php')) {
-        return base_path().'/config/'.$name.'.php';
+    if (file_exists(dirname(__DIR__, 5).'/config/'.$name.'.php')) {
+        return file_exists(dirname(__DIR__, 5)).'/config/'.$name.'.php';
     }
 
-    return plugins_path().'/xtension/config/xtension.php';
+    return dirname(__DIR__).'/config/xtension.php';
 }
 
-function getArrayValueByKey($array, $key, $default = null)
+function getArrayValueByKey ( $array, $key, $default = null )
 {
-    if (is_null($key)) {
+    if( is_null( $key ) ) {
         return $default;
     }
 
-    if (isset($array[$key])) {
-        return $array[$key];
+    if( isset( $array[ $key ] ) ) {
+        return $array[ $key ];
     }
 
-    foreach (explode('.', $key) as $segment) {
-        if (! is_array($array) || ! array_key_exists($segment, $array)) {
+    foreach ( explode( '.', $key ) as $segment ) {
+        if( !is_array( $array ) || !array_key_exists( $segment, $array ) ) {
             return $default;
         }
 
-        $array = $array[$segment];
+        $array = $array[ $segment ];
     }
 
     return $array;
 }
-

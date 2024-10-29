@@ -2,8 +2,6 @@
 
 namespace Composer\Installers;
 
-use Composer\Package\PackageInterface;
-
 class ExpressionEngineInstaller extends BaseInstaller
 {
     /** @var array<string, string> */

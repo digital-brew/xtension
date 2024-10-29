@@ -2,21 +2,20 @@
 
 namespace DigitalBrew\Xtension\Modules\Front;
 
-use DigitalBrew\Hooks\Action;
 use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Meta
 {
-  /**
-   * @throws BindingResolutionException
-   */
-  public static function register(): void
-  {
-    if (!getConfig( 'xtension.frontend.meta_tags.enabled' )) {
-      Action::remove( 'wp_head', 'wp_generator' );
-      Action::remove( 'wp_head', 'rsd_link' );
-      Action::remove( 'wp_head', 'wlwmanifest_link' );
-      Action::remove( 'wp_head', 'wp_shortlink_wp_head' );
+    /**
+     * @throws BindingResolutionException
+     */
+    public static function register(): void
+    {
+        if (!getConfig('xtension.frontend.meta_tags.enabled')) {
+            remove_action('wp_head', 'wp_generator');
+            remove_action('wp_head', 'rsd_link');
+            remove_action('wp_head', 'wlwmanifest_link');
+            remove_action('wp_head', 'wp_shortlink_wp_head');
+        }
     }
-  }
 }

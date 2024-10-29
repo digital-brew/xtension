@@ -2,18 +2,16 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-
 class Dashboard
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
-        Action::add('admin_init', [$instance, 'disableWidgets'], 999);
-        Action::add('admin_init', [$instance, 'maybeDisableWelcomePanel']);
-        Action::add('admin_init', [$instance, 'maybeDisableMultisiteRightNowWidget']);
-        Action::add('admin_init', [$instance, 'maybeDisableMultisiteWordPressEventsAndNewsWidget']);
+        add_action('admin_init', [ $instance, 'disableWidgets' ], 999);
+        add_action('admin_init', [ $instance, 'maybeDisableWelcomePanel' ]);
+        add_action('admin_init', [ $instance, 'maybeDisableMultisiteRightNowWidget' ]);
+        add_action('admin_init', [ $instance, 'maybeDisableMultisiteWordPressEventsAndNewsWidget' ]);
     }
 
     public function disableWidgets(): void
@@ -29,7 +27,7 @@ class Dashboard
     public function maybeDisableWelcomePanel(): void
     {
         if (getConfig('xtension.admin.dashboard.widgets.wp_welcome_panel.enabled', true) === false) {
-            Action::remove('welcome_panel', 'wp_welcome_panel');
+            remove_action('welcome_panel', 'wp_welcome_panel');
         }
     }
 
@@ -47,4 +45,3 @@ class Dashboard
         }
     }
 }
-

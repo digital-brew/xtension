@@ -2,16 +2,14 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-
 class Bar
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
-        Action::add('admin_bar_menu', [$instance, 'disableBarNodes'], 999);
-        Action::add('admin_bar_menu', [$instance, 'enableBarNodes'], 100);
+        add_action('admin_bar_menu', [ $instance, 'disableBarNodes' ], 999);
+        add_action('admin_bar_menu', [ $instance, 'enableBarNodes' ], 100);
         $instance->disableAdminBarOnFrontEnd();
     }
 
@@ -44,7 +42,7 @@ class Bar
                     if (preg_match('/\d+/', $node, $matches)) {
                         $blog_id = $matches[0]; // $matches[0] contains the first match found
                         $domain = get_blogaddress_by_id($blog_id);
-                        $props['href'] = rtrim($domain, '/').$value['href'];
+                        $props['href'] = rtrim($domain, '/') . $value['href'];
                     }
                 }
 
@@ -64,10 +62,9 @@ class Bar
         }
 
         if (isset($showAdminBar['other_roles']) && $showAdminBar['other_roles'] === false) {
-            if (! current_user_can('administrator')) {
+            if (!current_user_can('administrator')) {
                 add_filter('show_admin_bar', '__return_false');
             }
         }
     }
 }
-

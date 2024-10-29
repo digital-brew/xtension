@@ -2,15 +2,13 @@
 
 namespace DigitalBrew\Xtension\Modules;
 
-use DigitalBrew\Hooks\Action;
-
 class General
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
-        Action::add('admin_head', [$instance, 'accentColors']);
+        add_action('admin_head', [ $instance, 'accentColors' ]);
     }
 
     public function accentColors(): void
@@ -22,13 +20,12 @@ class General
         echo '
       <style>
         :root {
-          --color-accent: '.$accent.';
-          --color-accent-light: '.$accent_light.';
-          --color-accent-dark: '.$accent_dark.';
-          --color-accent-bg: '.$accent_bg.';
+          --color-accent: ' . $accent . ';
+          --color-accent-light: ' . $accent_light . ';
+          --color-accent-dark: ' . $accent_dark . ';
+          --color-accent-bg: ' . $accent_bg . ';
         }
       </style>
     ';
     }
 }
-

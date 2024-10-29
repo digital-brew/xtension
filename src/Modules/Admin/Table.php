@@ -2,15 +2,13 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-use DigitalBrew\Hooks\Filter;
 use Illuminate\Support\Str;
 
 class Table
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
         if (getConfig('xtension.admin.table') !== null) {
             $instance->removeTableColumns();
@@ -24,12 +22,12 @@ class Table
         $tables = getConfig('xtension.admin.table', []);
 
         foreach ($tables as $name => $value) {
-            if (isset($value['columns']) && ! empty($value['columns']['remove'])) {
-                Filter::add('manage_'.$name.'_columns', function ($column_headers) use ($value) {
+            if (isset($value['columns']) && !empty($value['columns']['remove'])) {
+                add_filter('manage_' . $name . '_columns', function ($column_headers) use ($value) {
                     $columns = $value['columns']['remove'];
 
                     foreach ($columns as $column) {
-                        unset($column_headers[$column]);
+                        unset($column_headers[ $column ]);
                     }
 
                     return $column_headers;
@@ -67,7 +65,7 @@ class Table
         /*
    * Creating a column (it is also possible to remove some default ones)
    */
-        Filter::add('manage_users_columns', function ($columns) {
+        add_filter('manage_users_columns', function ($columns) {
             $columns['registration_date'] = 'Registration date';
 
             return $columns;
@@ -76,10 +74,10 @@ class Table
         /*
          * Fill our new column with registration dates of the users
          */
-        Filter::add('manage_users_custom_column', function ($row_output, $column_id_attr, $user) {
+        add_filter('manage_users_custom_column', function ($row_output, $column_id_attr, $user) {
             $date_format = get_option('date_format');
             $time_format = get_option('time_format');
-            $date_time_format = $date_format.' '.$time_format;
+            $date_time_format = $date_format . ' ' . $time_format;
 
             switch ($column_id_attr) {
                 case 'registration_date' :
@@ -88,7 +86,6 @@ class Table
 
                 default:
                     break;
-
             }
 
             return $row_output;
@@ -97,24 +94,24 @@ class Table
         /*
          * Make our "Registration date" column sortable
          */
-        Filter::add('manage_users_sortable_columns', function ($columns) {
-            return wp_parse_args(['registration_date' => 'registered'], $columns);
+        add_filter('manage_users_sortable_columns', function ($columns) {
+            return wp_parse_args([ 'registration_date' => 'registered' ], $columns);
         });
     }
 
     public function addLastLoginUsersSortableColumn(): void
     {
-        Filter::add('manage_users_columns', function ($columns) {
+        add_filter('manage_users_columns', function ($columns) {
             $columns['last_login'] = 'Last Login'; // column ID / column Title
 
             return $columns;
         });
 
-        Filter::add('manage_users_custom_column', function ($output, $column_id, $user_id) {
+        add_filter('manage_users_custom_column', function ($output, $column_id, $user_id) {
             if ($column_id == 'last_login') {
                 $date_format = get_option('date_format');
                 $time_format = get_option('time_format');
-                $date_time_format = $date_format.' '.$time_format;
+                $date_time_format = $date_format . ' ' . $time_format;
 
                 $last_login = get_user_meta($user_id, 'last_login', true);
 
@@ -124,14 +121,14 @@ class Table
             return $output;
         }, 10, 3);
 
-        Filter::add('manage_users_sortable_columns', function ($columns) {
+        add_filter('manage_users_sortable_columns', function ($columns) {
             return wp_parse_args([
                 'last_login' => 'last_login',
             ], $columns);
         });
 
-        Action::add('pre_get_users', function ($query) {
-            if (! is_admin()) {
+        add_action('pre_get_users', function ($query) {
+            if (!is_admin()) {
                 return $query;
             }
             $screen = get_current_screen();
@@ -140,7 +137,6 @@ class Table
                 return $query;
             }
             if (isset($_GET['orderby']) && $_GET['orderby'] == 'last_login') {
-
                 $query->query_vars['meta_key'] = 'last_login';
                 $query->query_vars['orderby'] = 'meta_value';
             }
@@ -151,7 +147,7 @@ class Table
 
     public function addTotalSalesProductsSortableColumn(): void
     {
-        Filter::add('manage_edit-product_columns', function ($column_name) {
+        add_filter('manage_edit-product_columns', function ($column_name) {
             return wp_parse_args(
                 [
                     'total_sales' => 'Total Sales',
@@ -160,13 +156,13 @@ class Table
             );
         });
 
-        Action::add('manage_posts_custom_column', function ($column_name, $product_id) {
+        add_action('manage_posts_custom_column', function ($column_name, $product_id) {
             if ($column_name === 'total_sales') {
                 echo get_post_meta($product_id, 'total_sales', true);
             }
         }, 25, 2);
 
-        Filter::add('manage_edit-product_sortable_columns', function ($sortable_columns) {
+        add_filter('manage_edit-product_sortable_columns', function ($sortable_columns) {
             return wp_parse_args(
                 [
                     'total_sales' => 'by_total_sales',
@@ -175,8 +171,8 @@ class Table
             );
         });
 
-        Action::add('pre_get_posts', function ($query) {
-            if (! is_admin() || empty($_GET['orderby']) || empty($_GET['order'])) {
+        add_action('pre_get_posts', function ($query) {
+            if (!is_admin() || empty($_GET['orderby']) || empty($_GET['order'])) {
                 return $query;
             }
 
@@ -195,28 +191,25 @@ class Table
         // legacy – for CPT-based orders
         //    add_filter( 'manage_edit-shop_order_columns', 'misha_order_items_column' );
         // for HPOS-based orders
-        Filter::add('manage_woocommerce_page_wc-orders_columns', function ($columns) {
-
+        add_filter('manage_woocommerce_page_wc-orders_columns', function ($columns) {
             // let's add our column before "Total"
             return array_slice($columns, 0, 4, true) // 4 columns before
-                   + ['order_products' => 'Purchased products'] // our column is going to be 5th
-                   + array_slice($columns, 4, null, true);
-
+                + [ 'order_products' => 'Purchased products' ] // our column is going to be 5th
+                + array_slice($columns, 4, null, true);
         });
 
         // legacy – for CPT-based orders
         //    add_action( 'manage_shop_order_posts_custom_column', 'misha_populate_order_items_column', 25, 2 );
         // for HPOS-based orders
-        Action::add('manage_woocommerce_page_wc-orders_custom_column', function ($column_name, $order_or_order_id) {
-
+        add_action('manage_woocommerce_page_wc-orders_custom_column', function ($column_name, $order_or_order_id) {
             // legacy CPT-based order compatibility
             $order = $order_or_order_id instanceof WC_Order ? $order_or_order_id : wc_get_order($order_or_order_id);
 
             if ($column_name === 'order_products') {
                 $items = $order->get_items();
-                if (! is_wp_error($items)) {
+                if (!is_wp_error($items)) {
                     foreach ($items as $item) {
-                        echo $item['quantity'].' × <a href="'.get_edit_post_link($item['product_id']).'">'.$item['name'].'</a><br />';
+                        echo $item['quantity'] . ' × <a href="' . get_edit_post_link($item['product_id']) . '">' . $item['name'] . '</a><br />';
                         // you can also use $order_item->variation_id parameter
                         // by the way, $item[ 'name' ] will display variation name too
                     }
@@ -230,14 +223,14 @@ class Table
         $tables = getConfig('xtension.admin.table', []);
 
         foreach ($tables as $name => $value) {
-            if (isset($value['actions']) && ! empty($value['actions']['remove'])) {
+            if (isset($value['actions']) && !empty($value['actions']['remove'])) {
                 $nameSingular = Str::singular($name);
 
-                Filter::add($nameSingular.'_row_actions', function ($actions, $object) use ($value) {
+                add_filter($nameSingular . '_row_actions', function ($actions, $object) use ($value) {
                     $options = $value['actions']['remove'];
                     foreach ($options as $option) {
-                        if (isset($actions[$option])) {
-                            unset($actions[$option]);
+                        if (isset($actions[ $option ])) {
+                            unset($actions[ $option ]);
                         }
                     }
 
@@ -247,4 +240,3 @@ class Table
         }
     }
 }
-

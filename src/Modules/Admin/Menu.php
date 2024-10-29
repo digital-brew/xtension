@@ -2,18 +2,16 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-
 class Menu
 {
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
 
-        Action::add('admin_menu', [$instance, 'disableNodes'], 999);
-        Action::add('admin_menu', [$instance, 'enableNodes'], 999);
-        Action::add('admin_menu', [$instance, 'maybeDisableCustomizer']);
-        Action::add('admin_head', [$instance, 'maybeDisableWooCommerceSeparator'], 999);
+        add_action('admin_menu', [ $instance, 'disableNodes' ], 999);
+        add_action('admin_menu', [ $instance, 'enableNodes' ], 999);
+        add_action('admin_menu', [ $instance, 'maybeDisableCustomizer' ]);
+        add_action('admin_head', [ $instance, 'maybeDisableWooCommerceSeparator' ], 999);
     }
 
     public function disableNodes(): void
@@ -39,7 +37,7 @@ class Menu
                         $value['label'],
                         $value['label'],
                         '',
-                        'admin_menu_label_'.$node,
+                        'admin_menu_label_' . $node,
                         '',
                         'dashicons-minus',
                         $value['position']
@@ -66,4 +64,3 @@ class Menu
         }
     }
 }
-

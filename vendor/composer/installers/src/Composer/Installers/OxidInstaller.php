@@ -6,7 +6,7 @@ use Composer\Package\PackageInterface;
 
 class OxidInstaller extends BaseInstaller
 {
-    const VENDOR_PATTERN = '/^modules\/(?P<vendor>.+)\/.+/';
+    public const VENDOR_PATTERN = '/^modules\/(?P<vendor>.+)\/.+/';
 
     /** @var array<string, string> */
     protected $locations = array(

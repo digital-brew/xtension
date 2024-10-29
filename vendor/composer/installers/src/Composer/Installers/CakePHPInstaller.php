@@ -2,7 +2,6 @@
 
 namespace Composer\Installers;
 
-use Composer\DependencyResolver\Pool;
 use Composer\Semver\Constraint\Constraint;
 
 class CakePHPInstaller extends BaseInstaller

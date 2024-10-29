@@ -84,7 +84,7 @@ class Installer extends LibraryInstaller
         'pxcms'        => 'PxcmsInstaller',
         'phpbb'        => 'PhpBBInstaller',
         'piwik'        => 'PiwikInstaller',
-        'plentymarkets'=> 'PlentymarketsInstaller',
+        'plentymarkets' => 'PlentymarketsInstaller',
         'ppi'          => 'PPIInstaller',
         'puppet'       => 'PuppetInstaller',
         'radphp'       => 'RadPHPInstaller',

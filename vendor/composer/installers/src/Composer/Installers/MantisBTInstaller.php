@@ -2,8 +2,6 @@
 
 namespace Composer\Installers;
 
-use Composer\DependencyResolver\Pool;
-
 class MantisBTInstaller extends BaseInstaller
 {
     /** @var array<string, string> */

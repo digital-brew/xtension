@@ -2,8 +2,6 @@
 
 namespace DigitalBrew\Xtension\Modules\Admin;
 
-use DigitalBrew\Hooks\Action;
-
 class Assets
 {
     public string $assets_path;
@@ -23,7 +21,7 @@ class Assets
 
     public static function register(): void
     {
-        $instance = new self;
+        $instance = new self();
         if (getConfig('xtension.admin.new_look', false)) {
             $instance->loadScripts();
             $instance->reloadStyles();
@@ -34,10 +32,31 @@ class Assets
     public function loadScripts(): void
     {
         if ($this->canLoadAssets()) {
-            Action::add('admin_enqueue_scripts', function () {
+            add_action('admin_enqueue_scripts', function () {
                 wp_enqueue_script('admin-scripts', $this->assets('scripts/app.js'), [], $this->getVersion(), true);
             }, 999);
         }
+    }
+
+    public function canLoadAssets(): bool
+    {
+        $url = $_SERVER['REQUEST_URI'];
+        $is_post_enabled = true;
+        if (getConfig('xtension.cpt.activate_on') !== null && get_post_type() !== false) {
+            $is_post_enabled = in_array(get_post_type(), getConfig('xtension.cpt.activate_on'));
+        }
+
+        return ! ((str_contains($url, 'post-new.php') or str_contains($url, 'action=edit')) and ! str_contains($url, 'post_type=acf-field-group')) or $is_post_enabled;
+    }
+
+    public function assets($asset): string
+    {
+        return $this->assets_path.$asset;
+    }
+
+    public function getVersion(): string
+    {
+        return $this->version;
     }
 
     public function reloadStyles(): void
@@ -64,7 +83,7 @@ class Assets
     public function deregisterStyles($styles): void
     {
         if ($this->canLoadAssets()) {
-            Action::add('admin_init', function ($hook) use ($styles) {
+            add_action('admin_init', function ($hook) use ($styles) {
                 foreach ($styles as $style) {
                     wp_deregister_style($style);
                 }
@@ -75,7 +94,7 @@ class Assets
     public function registerStyles($styles): void
     {
         if ($this->canLoadAssets()) {
-            Action::add('admin_enqueue_scripts', function ($hook) use ($styles) {
+            add_action('admin_enqueue_scripts', function ($hook) use ($styles) {
                 foreach ($styles as $style) {
                     wp_enqueue_style($style, $this->assets('styles/'.$style.'.css'), [], $this->getVersion());
                 }
@@ -86,7 +105,7 @@ class Assets
     public function loadFonts(): void
     {
         if ($this->canLoadAssets()) {
-            Action::add('admin_head', function ($hook) {
+            add_action('admin_head', function ($hook) {
                 echo '
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,26 +113,5 @@ class Assets
         ';
             }, 999);
         }
-    }
-
-    public function assets($asset): string
-    {
-        return $this->assets_path.$asset;
-    }
-
-    public function getVersion(): string
-    {
-        return $this->version;
-    }
-
-    public function canLoadAssets(): bool
-    {
-        $url = $_SERVER['REQUEST_URI'];
-        $is_post_enabled = true;
-        if (getConfig('xtension.cpt.activate_on') !== null && get_post_type() !== false) {
-            $is_post_enabled = in_array(get_post_type(), getConfig('xtension.cpt.activate_on'));
-        }
-
-        return ! ((str_contains($url, 'post-new.php') or str_contains($url, 'action=edit')) and ! str_contains($url, 'post_type=acf-field-group')) or $is_post_enabled;
     }
 }

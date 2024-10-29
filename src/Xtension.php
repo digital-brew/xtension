@@ -20,39 +20,39 @@ use DigitalBrew\Xtension\Modules\Posts;
 
 class Xtension
 {
-  public static function getServices(): array
-  {
-    return [
-      Assets::class,
-      Bar::class,
-      Comments::class,
-      Dashboard::class,
-      Emoji::class,
-      Feed::class,
-      Footer::class,
-      General::class,
-      JQuery::class,
-      LastLoginTimestamp::class,
-      Menu::class,
-      Meta::class,
-      NetworkMenu::class,
-      Posts::class,
-      Table::class
-    ];
-  }
-
-  public static function registerServices(): void
-  {
-    foreach (self::getServices() as $class) {
-      $service = self::instantiate($class);
-      if (method_exists($service, 'register')) {
-        $service->register();
-      }
+    public static function getServices(): array
+    {
+        return [
+          Assets::class,
+          Bar::class,
+          Comments::class,
+          Dashboard::class,
+          Emoji::class,
+          Feed::class,
+          Footer::class,
+          General::class,
+          JQuery::class,
+          LastLoginTimestamp::class,
+          Menu::class,
+          Meta::class,
+          NetworkMenu::class,
+          Posts::class,
+          Table::class
+        ];
     }
-  }
 
-  private static function instantiate($class)
-  {
-    return new $class();
-  }
+    public static function registerServices(): void
+    {
+        foreach (self::getServices() as $class) {
+            $service = self::instantiate($class);
+            if (method_exists($service, 'register')) {
+                $service->register();
+            }
+        }
+    }
+
+    private static function instantiate($class)
+    {
+        return new $class();
+    }
 }

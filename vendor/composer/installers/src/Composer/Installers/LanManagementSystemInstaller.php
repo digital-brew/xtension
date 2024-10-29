@@ -4,7 +4,6 @@ namespace Composer\Installers;
 
 class LanManagementSystemInstaller extends BaseInstaller
 {
-
     /** @var array<string, string> */
     protected $locations = array(
         'plugin' => 'plugins/{$name}/',
