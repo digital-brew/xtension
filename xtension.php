@@ -21,7 +21,7 @@ use DigitalBrew\Xtension\Xtension;
 require __DIR__ . '/vendor/autoload.php';
 
 if (class_exists('DigitalBrew\\Xtension\\Xtension')) {
-    add_action('plugins_loaded', function () {
+    add_action('init', function () {
         Xtension::registerServices();
     }, 999);
 }

@@ -17,7 +17,7 @@ function findConfig($name): string
     }
 
     if (file_exists(dirname(__DIR__, 5).'/config/'.$name.'.php')) {
-        return file_exists(dirname(__DIR__, 5)).'/config/'.$name.'.php';
+        return dirname(__DIR__, 5).'/config/'.$name.'.php';
     }
 
     return dirname(__DIR__).'/config/xtension.php';
