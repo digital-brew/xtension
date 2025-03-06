@@ -62,10 +62,11 @@
 
 .wp-admin .editor-post-title {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-  font-size: 52px;
-  font-weight: 400;
+  font-size: 4.6rem;
+  font-weight: 200;
   margin-bottom: 44px;
   margin-top: 28px;
+  line-height: 4.6rem;
 }
 
 .is-root-container.block-editor-block-list__layout {

@@ -1,5 +1,8 @@
-### IDE
+# IDE
 /.idea
 
-### NodeJS
+# NodeJS
 node_modules/
+
+# Vendor
+vendor/

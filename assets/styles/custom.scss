@@ -646,3 +646,12 @@ a[data-name="add"],
   margin-left: 6px;
   border-radius: var(--border-radius);
 }
+
+table .column-title strong,
+table .order-view strong {
+  color: var(--color-gray-6) !important;
+}
+
+.mce-content-body * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}

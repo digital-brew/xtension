@@ -26,7 +26,6 @@ buildSass('assets/styles', 'dist/styles')
 
 mix
   .copyDirectory('assets/images', 'dist/images')
-  .copyDirectory('assets/fonts', 'dist/fonts');
 
 mix
   .sourceMaps()

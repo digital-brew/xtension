@@ -1,11 +1,11 @@
 {
   "name": "@digital-brew/xtension",
-  "version": "2.0.3",
-  "description": "Simply extend WP Admin.",
+  "version": "3.0.0",
+  "description": "Simply show or hide stuff in the admin area, and also... make it prettier.",
   "scripts": {
     "build": "mix",
     "build:prod": "mix --production",
-    "watch": "mix watch"
+    "dev": "mix watch"
   },
   "devDependencies": {
     "@alpinejs/collapse": "^3.12.3",
