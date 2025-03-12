@@ -659,3 +659,7 @@ table .order-view strong {
 .acfe-modal-overlay {
   display: none !important;
 }
+
+.edit-post-meta-boxes-area .metabox-location-side .postbox input[type=checkbox]:before {
+  margin: -2px -2px;
+}
