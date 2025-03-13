@@ -23,6 +23,10 @@ class Menu
                 if (isset($node['menu_slug']) && isset($node['submenu_slug'])) {
                     remove_submenu_page($node['menu_slug'], $node['submenu_slug']);
                 }
+
+                if (isset($node['menu_slug']) && !isset($node['submenu_slug'])) {
+                    remove_menu_page($node['menu_slug']);
+                }
             }
         }
     }
@@ -41,6 +45,16 @@ class Menu
                         '',
                         'dashicons-minus',
                         $value['position']
+                    );
+                }
+
+                if (!isset($value['is_label']) && isset($value['menu_slug'])) {
+                    add_submenu_page(
+                        $value['parent_slug'],
+                        $value['page_title'],
+                        $value['page_title'],
+                        $value['capability'],
+                        $value['menu_slug'],
                     );
                 }
             }
