@@ -2458,9 +2458,12 @@ table.plugins {
   border-spacing: 20px;
 }
 
+.plugins thead {
+  z-index: 1;
+}
+
 .plugins thead, tr, th, td {
   position: relative;
-  z-index: 1;
 }
 
 .plugins tr::before {

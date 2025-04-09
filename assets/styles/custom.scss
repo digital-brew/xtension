@@ -663,3 +663,7 @@ table .order-view strong {
 .edit-post-meta-boxes-area .metabox-location-side .postbox input[type=checkbox]:before {
   margin: -2px -2px;
 }
+
+.acf-table>tbody>tr {
+  z-index: auto;
+}
